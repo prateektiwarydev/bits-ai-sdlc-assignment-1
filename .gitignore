@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and local environments
+node_modules/
+.venv/
+
+# Local logs
+*.log
