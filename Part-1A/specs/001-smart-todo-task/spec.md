@@ -53,12 +53,19 @@ operation.
 1. **Given** an empty task collection and valid task data, **When** the user
    creates a task, **Then** the task is added and the result identifies the
    created task with its stored values.
-2. **Given** an existing task, **When** the user retrieves it, **Then** the
+2. **Given** a create or update request containing a blank or whitespace-only
+   title, **When** the operation is processed, **Then** it is rejected with
+   `INVALID_INPUT` and no task data is changed.
+3. **Given** a create or update request containing a field with an invalid
+   type or an invalid priority, tag, or task identifier, **When** the operation
+   is processed, **Then** it is rejected with `INVALID_INPUT` and no task data
+   is changed.
+4. **Given** an existing task, **When** the user retrieves it, **Then** the
    result contains the task's stored values.
-3. **Given** an existing task and valid replacement values, **When** the user
+5. **Given** an existing task and valid replacement values, **When** the user
    updates it, **Then** the result and subsequent retrieval contain the updated
    values without creating an additional task.
-4. **Given** an existing task, **When** the user deletes it, **Then** subsequent
+6. **Given** an existing task, **When** the user deletes it, **Then** subsequent
    retrieval and collection results do not contain that task.
 
 ### User Story 2 - Find Tasks by Tag (Priority: P2)
@@ -82,6 +89,9 @@ filter, and compare the returned collection with the exact expected subset.
    **When** the request is processed, **Then** it returns the specified
    validation error and does not change task data. Matching otherwise ignores
    letter case but does not apply partial matching.
+4. **Given** an empty, whitespace-only, or non-string tag filter input,
+   **When** the filter operation is processed, **Then** it is rejected with
+   `INVALID_INPUT` and the task collection is unchanged.
 
 ### User Story 3 - Persist and Restore Tasks (Priority: P2)
 
@@ -145,18 +155,24 @@ and verify the resulting status and rejection of disallowed transitions.
 1. **Given** a task in to do or in progress status, **When** the user requests
    the next forward transition, **Then** the task changes respectively to in
    progress or done.
-2. **Given** a task and a transition not permitted by the clarified status
+2. **Given** a task in any status, **When** a generic update supplies the task
+   ID or changes status directly, **Then** the operation is rejected with
+   `INVALID_INPUT` and the task is unchanged.
+3. **Given** a task and a transition not permitted by the clarified status
    rules, including a backward transition, **When** the user requests that
    transition, **Then** the specified validation error is returned and the
    original status is preserved.
-3. **Given** an unknown task identifier, **When** the user requests a status
+4. **Given** an unknown task identifier, **When** the user requests a status
    transition, **Then** the specified not-found error is returned and no task
    is changed.
 
 ### Edge Cases
 
-- Creating or updating a task with each missing, empty, malformed, or
-  out-of-range field identified by the clarification decisions.
+- Creating or updating a task with a blank or whitespace-only title; a
+  non-string title or description; a tags field that is not a list; a tag that
+  is not a string or is empty or whitespace-only; an invalid priority; or an
+  invalid status or task identifier.
+- Generic updates attempt to change the task ID or status directly.
 - Retrieving, updating, deleting, filtering, sorting, or transitioning with an
   unknown task identifier or an empty task collection.
 - Filtering with an empty, repeated, differently cased, or otherwise invalid
@@ -178,11 +194,20 @@ and verify the resulting status and rejection of disallowed transitions.
   creating a task with a non-empty title, a generated unique identity, optional
   description and tags, medium priority by default, and to do status by
   default.
+  A title MUST be a string after whitespace-only input is rejected. A
+  description MUST be a string when supplied and MUST default to an empty
+  string. Tags MUST be a list of non-empty, non-whitespace strings and MUST
+  default to an empty list. Priority MUST be one of high, medium, or low.
+  Status MUST default to to do.
 - **FR-002**: The application MUST provide a user-accessible operation for
   retrieving one task and for retrieving the task collection.
 - **FR-003**: The application MUST provide a user-accessible operation for
   updating an existing task with valid task data while preserving the task's
   identity.
+  Updates MUST accept only the mutable fields title, description, tags, and
+  priority. Supplying task ID or status in a generic update MUST return
+  `INVALID_INPUT`. The same title, description, tags, and priority type and
+  value rules as creation MUST apply.
 - **FR-004**: The application MUST provide a user-accessible operation for
   deleting an existing task.
 - **FR-005**: The application MUST provide a user-accessible operation for
@@ -190,6 +215,8 @@ and verify the resulting status and rejection of disallowed transitions.
 - **FR-006**: Tag filtering MUST return exactly the tasks with a matching tag,
   ignoring letter case but not applying partial matching, and MUST return an
   empty collection when no task matches.
+  Filter input MUST be a non-empty, non-whitespace string; otherwise the
+  operation MUST return `INVALID_INPUT` and MUST not change task data.
 - **FR-007**: The application MUST persist task information in JSON format.
 - **FR-008**: The application MUST restore task information from valid JSON
   persistence data without changing represented values.
@@ -209,12 +236,23 @@ and verify the resulting status and rejection of disallowed transitions.
 - **FR-014**: The application MUST support the statuses to do, in progress, and
   done, with forward transitions from to do to in progress and from in
   progress to done.
+  Status changes MUST use the dedicated transition operation. Generic task
+  updates MUST NOT change status or task ID.
 - **FR-015**: The application MUST reject prohibited status transitions without
   changing the task's current status.
 - **FR-016**: Invalid operations MUST return an explicit error and MUST NOT
   partially modify valid task data.
 - **FR-017**: Every task operation MUST identify the affected task or collection
   in the clarified result format.
+- **FR-018**: Unsuccessful CLI operations MUST use one consistent contract:
+  `INVALID_INPUT` for invalid field values or types, `TASK_NOT_FOUND` for an
+  unknown task ID, `INVALID_TRANSITION` for a prohibited status transition,
+  and `INVALID_JSON` for malformed or structurally invalid JSON persistence.
+  The contract MUST be inspectable and MUST not prescribe text formatting or
+  presentation details beyond the required operation outcome.
+- **FR-019**: An unsuccessful create, update, delete, filter, sort, status
+  transition, or persistence restore operation MUST leave valid existing task
+  data unchanged.
 
 ### Non-Functional Requirements
 
@@ -236,15 +274,22 @@ and verify the resulting status and rejection of disallowed transitions.
 
 - **Task**: A unit of work with a generated unique identity, a required
   non-empty title, optional description and tags, a priority, and a status.
-  New tasks default to medium priority and to do status.
+  Identity MUST be treated as a string-valued opaque identifier; the exact
+  generated representation is deferred to planning. Title is a string and
+  whitespace-only titles are invalid. Description is a string and defaults to
+  an empty string. Tags are a list of non-empty, non-whitespace strings and
+  default to an empty list. New tasks default to medium priority and to do
+  status.
 - **Tag**: A label associated with a task and used by the tag-filtering
   capability. Matching is exact and case-insensitive; partial matching is not
   used.
 - **Priority**: A task value used to produce the required priority ordering.
-  Valid values are low, medium, and high; sorting is high-to-low with existing
+  Valid values are HIGH, MEDIUM, and LOW; sorting is descending priority,
+  HIGH before MEDIUM before LOW, with existing
   relative order preserved for ties.
-- **Status**: A task value representing lifecycle state. Valid states are to
-  do, in progress, and done; only forward transitions are permitted.
+- **Status**: A task value representing lifecycle state. Valid states are TODO,
+  IN_PROGRESS, and DONE. The only permitted forward transitions are
+  TODO to IN_PROGRESS and IN_PROGRESS to DONE; DONE has no outgoing transition.
 - **Persistence Data**: JSON-formatted task information used to restore the
   task collection.
 
@@ -272,6 +317,17 @@ and verify the resulting status and rejection of disallowed transitions.
 - **SC-008**: Before final acceptance, all mandatory syntax/lint, security/SAST,
   and unit/contract-test harness gates produce inspectable outcomes, and no
   mandatory test is accepted on the basis of a weakened assertion.
+- **SC-009**: 100% of create and update cases with a blank or whitespace-only
+  title, invalid field type, invalid priority, invalid tag, supplied task ID,
+  or direct status change return the defined error category and leave task
+  data unchanged.
+- **SC-010**: 100% of tag-filter cases using an empty, whitespace-only, or
+  non-string input return `INVALID_INPUT`; exact case-insensitive matches
+  return only exact matches, and partial-match strings return no match.
+- **SC-011**: 100% of status-transition tests distinguish each adjacent forward
+  transition, each backward or skipped transition, a missing task, and a
+  direct generic-update attempt to status or ID, with the specified outcomes
+  and task mutation only for successful allowed transitions.
 
 ## Assumptions
 
@@ -293,6 +349,11 @@ and verify the resulting status and rejection of disallowed transitions.
   UI frameworks, deployment choices, and unrelated integrations are not
   required by the selected problem and await confirmation as scope decisions.
 - The assignment does not prescribe a performance threshold or capacity target.
+- The following refinements are engineering decisions for deterministic
+  specification testing, not requirements imposed by BITS Pilani: the CLI
+  interface, single-list scope, task field types and defaults, exact tag
+  validation, stable priority sorting, status lifecycle names and adjacent
+  transitions, CLI error categories, and unsuccessful-operation immutability.
 - Any provisional interpretation used during later clarification or planning
   MUST be labelled provisional and MUST NOT override the clarification
   decisions.
