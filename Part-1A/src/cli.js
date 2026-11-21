@@ -14,6 +14,16 @@ function resolveErrorCode(error) {
   return "INVALID_INPUT";
 }
 
+function isSetupError(errorValue) {
+  return errorValue && (
+    typeof errorValue.code === "string" &&
+    errorValue.code !== "INVALID_INPUT" &&
+    errorValue.code !== "TASK_NOT_FOUND" &&
+    errorValue.code !== "INVALID_TRANSITION" &&
+    errorValue.code !== "INVALID_JSON"
+  );
+}
+
 function exitStatus(code) {
   if (code === "INVALID_INPUT") return 2;
   if (code === "TASK_NOT_FOUND") return 3;
@@ -39,17 +49,41 @@ function run(argv) {
   try {
     args = argsModule.parseArgs(argv.slice(2));
   } catch (errorValue) {
+    if (isSetupError(errorValue)) {
+      const payload = presentation.failure(`task.${operation}`, "PROCESS_ERROR");
+      presentation.writeResult(`task.${operation}`, payload, 1);
+      return;
+    }
     const code = resolveErrorCode(errorValue);
     const payload = presentation.failure(`task.${operation}`, code);
     presentation.writeResult(`task.${operation}`, payload, exitStatus(code));
     return;
   }
 
-  const dataFile = argsModule.resolveDataFile(args);
+  let dataFile;
+  try {
+    argsModule.validateOperationOptions(operation, args);
+    dataFile = argsModule.resolveDataFile(args);
+  } catch (errorValue) {
+    if (isSetupError(errorValue)) {
+      const payload = presentation.failure(`task.${operation}`, "PROCESS_ERROR");
+      presentation.writeResult(`task.${operation}`, payload, 1);
+      return;
+    }
+    const code = resolveErrorCode(errorValue);
+    const payload = presentation.failure(`task.${operation}`, code);
+    presentation.writeResult(`task.${operation}`, payload, exitStatus(code));
+    return;
+  }
   let collection;
   try {
     collection = jsonStore.loadStore(dataFile);
   } catch (errorValue) {
+    if (isSetupError(errorValue)) {
+      const payload = presentation.failure(`task.${operation}`, "PROCESS_ERROR");
+      presentation.writeResult(`task.${operation}`, payload, 1);
+      return;
+    }
     const code = resolveErrorCode(errorValue);
     const payload = presentation.failure(`task.${operation}`, code);
     presentation.writeResult(`task.${operation}`, payload, exitStatus(code));
@@ -99,9 +133,7 @@ function run(argv) {
       if (args.description !== undefined) changes.description = args.description;
       if (args.tags !== undefined) changes.tags = args.tags;
       if (args.priority !== undefined) changes.priority = args.priority;
-      if (args.status !== undefined || args.id !== undefined) {
-        if (args.status !== undefined) throw { code: "INVALID_INPUT" };
-      }
+      if (Object.keys(changes).length === 0) throw { code: "INVALID_INPUT" };
       const next = taskService.updateTask(collection, id, changes);
       jsonStore.saveStore(dataFile, next);
       const task = taskService.getTask(next, id);
@@ -156,6 +188,11 @@ function run(argv) {
     const payload = presentation.failure("task", "INVALID_INPUT");
     presentation.writeResult("task", payload, 2);
   } catch (errorValue) {
+    if (isSetupError(errorValue)) {
+      const payload = presentation.failure(`task.${operation}`, "PROCESS_ERROR");
+      presentation.writeResult(`task.${operation}`, payload, 1);
+      return;
+    }
     const code = resolveErrorCode(errorValue);
     const payload = presentation.failure(`task.${operation}`, code);
     presentation.writeResult(`task.${operation}`, payload, exitStatus(code));

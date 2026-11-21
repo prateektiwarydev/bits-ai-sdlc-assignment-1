@@ -49,10 +49,13 @@ function isValidStore(document) {
   if (!document.tasks.every(isValidTask)) return false;
 
   const ids = new Set();
+  const sequences = new Set();
   let maxSequence = 0;
   for (const task of document.tasks) {
     if (ids.has(task.id)) return false;
     ids.add(task.id);
+    if (sequences.has(task.sequence)) return false;
+    sequences.add(task.sequence);
     if (task.sequence > maxSequence) maxSequence = task.sequence;
   }
   return maxSequence < document.nextId;
@@ -66,8 +69,11 @@ function loadStore(dataFile) {
   let text;
   try {
     text = fs.readFileSync(dataFile, "utf8");
-  } catch {
-    throw error("INVALID_JSON");
+  } catch (errorValue) {
+    if (errorValue && errorValue.code === "ENOENT") {
+      return { version: 1, nextId: 1, tasks: [] };
+    }
+    throw errorValue;
   }
   if (text.trim().length === 0) {
     throw error("INVALID_JSON");

@@ -10,3 +10,15 @@
 | FR-016–FR-019 | Validation and domain assertions verify explicit error objects and unchanged inputs/collections | Contract assertions verify exit 2/3/4/5, JSON error codes and unchanged files |
 | NFR-001–NFR-006 | Unit suites use exact objects and deterministic collections | Contract suites use isolated files and traceability records tool/test outcomes |
 | SC-001–SC-011 | Named unit assertions cover CRUD, tags, persistence, priority and transitions | Named contract assertions cover process exit, exact JSON, persisted state and non-mutation |
+
+## Repair-02 Post-Generation Regressions
+
+- `tests/unit/repair-02.test.js`
+  - Updates preserve TODO, IN_PROGRESS and DONE status.
+  - Duplicate persisted creation sequences return `INVALID_JSON` without file mutation.
+- `tests/contract/repair-02.test.js`
+  - Permitted updates preserve status and immutable ID.
+  - Missing editable update fields and unsupported create/list options return `INVALID_INPUT`.
+  - Empty `--data-file` returns `INVALID_INPUT`.
+  - Default storage resolves relative to the Part-1A project root.
+  - Duplicate sequences return `INVALID_JSON` and leave persisted bytes unchanged.

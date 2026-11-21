@@ -70,10 +70,7 @@ function updateTask(collection, id, changes) {
       : current.priority,
   };
 
-  const values = validation.validateTaskInput({
-    ...candidate,
-    status: current.status,
-  });
+  const values = validation.validateTaskInput(candidate);
   const next = cloneCollection(collection);
   next.tasks[index] = {
     ...next.tasks[index],

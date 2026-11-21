@@ -41,7 +41,35 @@ function parseArgs(argv) {
 }
 
 function getDefaultDataFile() {
-  return path.join(process.cwd(), "data", "tasks.json");
+  const projectRoot = path.resolve(__dirname, "../..");
+  return path.join(projectRoot, "data", "tasks.json");
+}
+
+const ALLOWED_OPTIONS = {
+  create: new Set(["title", "description", "tag", "priority", "data-file"]),
+  get: new Set(["id", "data-file"]),
+  list: new Set(["sort", "data-file"]),
+  update: new Set(["id", "title", "description", "tag", "priority", "data-file"]),
+  delete: new Set(["id", "data-file"]),
+  "filter-tag": new Set(["tag", "data-file"]),
+  transition: new Set(["id", "to", "data-file"]),
+};
+
+function validateOperationOptions(operation, args) {
+  const allowed = ALLOWED_OPTIONS[operation];
+  if (!allowed) throw error("INVALID_INPUT");
+  for (const name of Object.keys(args)) {
+    if (name !== "tags" && name !== "dataFile" && !allowed.has(name)) {
+      throw error("INVALID_INPUT");
+    }
+  }
+  if (
+    args.tags !== undefined &&
+    operation !== "create" &&
+    operation !== "filter-tag"
+  ) {
+    throw error("INVALID_INPUT");
+  }
 }
 
 function resolveDataFile(args) {
@@ -69,4 +97,5 @@ module.exports = {
   parseArgs,
   resolveDataFile,
   requireValue,
+  validateOperationOptions,
 };

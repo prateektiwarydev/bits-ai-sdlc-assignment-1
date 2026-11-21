@@ -1,0 +1,258 @@
+TAP version 13
+# Subtest: missing persistence file starts an empty collection
+ok 1 - missing persistence file starts an empty collection
+  ---
+  duration_ms: 74.751917
+  ...
+# Subtest: valid task state restores across separate CLI invocations
+not ok 2 - valid task state restores across separate CLI invocations
+  ---
+  duration_ms: 133.576
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/persistence.test.js:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/persistence.test.js:34:12)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:633:18)
+    Test.postRun (node:internal/test_runner/test:1045:19)
+    Test.run (node:internal/test_runner/test:973:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: malformed JSON returns INVALID_JSON and does not overwrite
+ok 3 - malformed JSON returns INVALID_JSON and does not overwrite
+  ---
+  duration_ms: 44.33125
+  ...
+# Subtest: structurally invalid JSON returns INVALID_JSON without overwrite
+ok 4 - structurally invalid JSON returns INVALID_JSON without overwrite
+  ---
+  duration_ms: 71.397833
+  ...
+# Subtest: priority list is HIGH, MEDIUM, LOW with stable equal-priority ties
+ok 5 - priority list is HIGH, MEDIUM, LOW with stable equal-priority ties
+  ---
+  duration_ms: 59.995041
+  ...
+# Subtest: invalid priority update returns INVALID_INPUT without mutation
+ok 6 - invalid priority update returns INVALID_INPUT without mutation
+  ---
+  duration_ms: 96.834375
+  ...
+# Subtest: permitted updates preserve status in TODO, IN_PROGRESS and DONE
+ok 7 - permitted updates preserve status in TODO, IN_PROGRESS and DONE
+  ---
+  duration_ms: 216.470458
+  ...
+# Subtest: update without editable fields returns INVALID_INPUT
+ok 8 - update without editable fields returns INVALID_INPUT
+  ---
+  duration_ms: 43.914333
+  ...
+# Subtest: unsupported create status and random list option return INVALID_INPUT
+ok 9 - unsupported create status and random list option return INVALID_INPUT
+  ---
+  duration_ms: 119.010166
+  ...
+# Subtest: empty data-file values return INVALID_INPUT and do not mutate
+ok 10 - empty data-file values return INVALID_INPUT and do not mutate
+  ---
+  duration_ms: 40.586167
+  ...
+# Subtest: default data file resolves under Part-1A from another working directory
+ok 11 - default data file resolves under Part-1A from another working directory
+  ---
+  duration_ms: 39.670708
+  ...
+# Subtest: duplicate persisted sequences return INVALID_JSON without overwrite
+ok 12 - duplicate persisted sequences return INVALID_JSON without overwrite
+  ---
+  duration_ms: 39.408334
+  ...
+# Subtest: TODO to IN_PROGRESS to DONE is the legal transition sequence
+ok 13 - TODO to IN_PROGRESS to DONE is the legal transition sequence
+  ---
+  duration_ms: 160.265041
+  ...
+# Subtest: TODO to DONE skip is rejected and task remains TODO
+ok 14 - TODO to DONE skip is rejected and task remains TODO
+  ---
+  duration_ms: 48.872667
+  ...
+# Subtest: unknown transition ID and direct status update are non-mutating
+ok 15 - unknown transition ID and direct status update are non-mutating
+  ---
+  duration_ms: 115.401958
+  ...
+# Subtest: tag filter is exact and case-insensitive while excluding substrings
+not ok 16 - tag filter is exact and case-insensitive while excluding substrings
+  ---
+  duration_ms: 108.045333
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:18:12)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.start (node:internal/test_runner/test:833:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: task creation accepts repeated --tag flags without changing exact matching
+not ok 17 - task creation accepts repeated --tag flags without changing exact matching
+  ---
+  duration_ms: 103.142667
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:31:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:44:12)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:633:18)
+    Test.postRun (node:internal/test_runner/test:1045:19)
+    Test.run (node:internal/test_runner/test:973:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: empty, whitespace-only and non-string tag filters are INVALID_INPUT
+ok 18 - empty, whitespace-only and non-string tag filters are INVALID_INPUT
+  ---
+  duration_ms: 126.706291
+  ...
+# Subtest: CRUD lifecycle persists exact task fields and immutable ID
+ok 19 - CRUD lifecycle persists exact task fields and immutable ID
+  ---
+  duration_ms: 335.30725
+  ...
+# Subtest: blank title and invalid types return INVALID_INPUT without mutation
+ok 20 - blank title and invalid types return INVALID_INPUT without mutation
+  ---
+  duration_ms: 77.701416
+  ...
+# Subtest: missing required IDs use INVALID_INPUT and unknown selectors use TASK_NOT_FOUND
+ok 21 - missing required IDs use INVALID_INPUT and unknown selectors use TASK_NOT_FOUND
+  ---
+  duration_ms: 233.8335
+  ...
+# Subtest: ID and status cannot be changed through generic update
+ok 22 - ID and status cannot be changed through generic update
+  ---
+  duration_ms: 39.239208
+  ...
+# Subtest: missing persistence data initializes an empty task collection
+ok 23 - missing persistence data initializes an empty task collection
+  ---
+  duration_ms: 9.58
+  ...
+# Subtest: malformed JSON returns INVALID_JSON without overwriting the file
+ok 24 - malformed JSON returns INVALID_JSON without overwriting the file
+  ---
+  duration_ms: 1.422958
+  ...
+# Subtest: valid JSON round trips all task fields
+ok 25 - valid JSON round trips all task fields
+  ---
+  duration_ms: 0.811708
+  ...
+# Subtest: structurally invalid JSON returns INVALID_JSON without overwrite
+ok 26 - structurally invalid JSON returns INVALID_JSON without overwrite
+  ---
+  duration_ms: 1.06375
+  ...
+# Subtest: priority sorting is HIGH, MEDIUM, LOW with stable ties
+ok 27 - priority sorting is HIGH, MEDIUM, LOW with stable ties
+  ---
+  duration_ms: 3.475292
+  ...
+# Subtest: domain updates preserve TODO, IN_PROGRESS and DONE status
+ok 28 - domain updates preserve TODO, IN_PROGRESS and DONE status
+  ---
+  duration_ms: 2.975083
+  ...
+# Subtest: persisted duplicate task sequences are INVALID_JSON
+ok 29 - persisted duplicate task sequences are INVALID_JSON
+  ---
+  duration_ms: 5.892833
+  ...
+# Subtest: TODO can advance to IN_PROGRESS and IN_PROGRESS to DONE
+ok 30 - TODO can advance to IN_PROGRESS and IN_PROGRESS to DONE
+  ---
+  duration_ms: 6.072417
+  ...
+# Subtest: illegal TODO to DONE skip leaves the task unchanged
+ok 31 - illegal TODO to DONE skip leaves the task unchanged
+  ---
+  duration_ms: 1.522333
+  ...
+# Subtest: backward and DONE outgoing transitions are rejected
+ok 32 - backward and DONE outgoing transitions are rejected
+  ---
+  duration_ms: 0.270625
+  ...
+# Subtest: tag matching is exact and case-insensitive
+ok 33 - tag matching is exact and case-insensitive
+  ---
+  duration_ms: 6.916416
+  ...
+# Subtest: empty, whitespace-only and non-string filters return INVALID_INPUT
+ok 34 - empty, whitespace-only and non-string filters return INVALID_INPUT
+  ---
+  duration_ms: 0.304
+  ...
+# Subtest: CRUD exports and create defaults are available
+ok 35 - CRUD exports and create defaults are available
+  ---
+  duration_ms: 7.925458
+  ...
+# Subtest: blank, invalid-type, invalid-tag, and invalid-priority inputs are rejected
+ok 36 - blank, invalid-type, invalid-tag, and invalid-priority inputs are rejected
+  ---
+  duration_ms: 0.596708
+  ...
+# Subtest: CRUD operations preserve the collection and immutable ID
+ok 37 - CRUD operations preserve the collection and immutable ID
+  ---
+  duration_ms: 0.736041
+  ...
+# Subtest: unknown IDs produce TASK_NOT_FOUND without mutation
+ok 38 - unknown IDs produce TASK_NOT_FOUND without mutation
+  ---
+  duration_ms: 0.487125
+  ...
+1..38
+# tests 38
+# suites 0
+# pass 35
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 755.725042

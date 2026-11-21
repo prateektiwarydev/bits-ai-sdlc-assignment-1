@@ -39,18 +39,12 @@ function validateTaskInput(input) {
     throw error("INVALID_INPUT");
   }
 
-  const status =
-    input.status === undefined ? "TODO" : input.status;
-  if (status !== "TODO") {
-    throw error("INVALID_INPUT");
-  }
-
   return {
     title: input.title.trim(),
     description,
     tags: [...tags],
     priority,
-    status,
+    status: "TODO",
   };
 }
 
