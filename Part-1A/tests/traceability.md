@@ -22,3 +22,5 @@
   - Empty `--data-file` returns `INVALID_INPUT`.
   - Default storage resolves relative to the Part-1A project root.
   - Duplicate sequences return `INVALID_JSON` and leave persisted bytes unchanged.
+- Filesystem save failures return `PROCESS_ERROR` with exit status 1 while the
+  isolated target remains non-mutated.

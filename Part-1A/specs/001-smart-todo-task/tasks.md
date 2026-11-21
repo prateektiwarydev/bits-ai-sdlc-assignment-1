@@ -207,7 +207,7 @@ CRUD execution remains dependent on persistence tasks T039–T042.
   files unchanged in src/persistence/json-store.js (FR-009, FR-018–FR-019).
 - [X] T042 [US3] Add configurable `--data-file` support in src/cli/args.js and
   src/cli.js, defaulting to data/tasks.json (NFR-003–NFR-004).
-- [ ] T043 [US1] Complete and verify end-to-end CLI CRUD wiring in src/cli.js
+- [x] T043 [US1] Complete and verify end-to-end CLI CRUD wiring in src/cli.js
   against the completed JSON persistence layer from T039–T042; verify isolated
   create/get/update/delete behavior and non-mutation failures
   (FR-001–FR-004, FR-007–FR-009, FR-019).
@@ -258,17 +258,17 @@ CRUD execution remains dependent on persistence tasks T039–T042.
 
 **Purpose**: Preserve first generation and execute all mandatory gates.
 
-- [ ] T051 Preserve the complete first generated application implementation
+- [x] T051 Preserve the complete first generated application implementation
   unchanged in evidence/initial/ with timestamps or identifiers (constitution
   VII).
-- [ ] T052 Execute `.harness/run.sh evidence/initial` and run every gate even
+- [x] T052 Execute `.harness/run.sh evidence/initial` and run every gate even
   when one fails (Gate 1, Gate 2, Gate 3).
-- [ ] T053 Preserve actual stdout, stderr, exit statuses and reports under
+- [x] T053 Preserve actual stdout, stderr, exit statuses and reports under
   evidence/initial/harness/ without overwriting earlier evidence.
-- [ ] T054 If genuine failures occur, prepare actionable feedback from actual
+- [x] T054 If genuine failures occur, prepare actionable feedback from actual
   findings and failed assertions for the coding agent, with no weakening or
   fabricated defects (constitution V).
-- [ ] T055 Do not add machine-generated narrative, reflection or ACCEPT/REJECT
+- [x] T055 Do not add machine-generated narrative, reflection or ACCEPT/REJECT
   entries to evidence/harness-log.md; reserve those for the student
   (constitution VIII).
 
@@ -278,16 +278,16 @@ CRUD execution remains dependent on persistence tasks T039–T042.
 
 **Purpose**: Repair genuine implementation failures and rerun the same gates.
 
-- [ ] T056 Apply only genuine implementation repairs tied to failed tests or
+- [x] T056 Apply only genuine implementation repairs tied to failed tests or
   findings; do not alter assertions, disable findings or lower thresholds
   (constitution V).
-- [ ] T057 Document each repair in machine-inspectable evidence under
+- [x] T057 Document each repair in machine-inspectable evidence under
   evidence/final/ without inventing repair cycles (constitution VII).
-- [ ] T058 Preserve repaired application code in evidence/final/ and do not
+- [x] T058 Preserve repaired application code in evidence/final/ and do not
   overwrite evidence/initial/.
-- [ ] T059 Rerun every mandatory gate through `.harness/run.sh evidence/final`
+- [x] T059 Rerun every mandatory gate through `.harness/run.sh evidence/final`
   and preserve complete rerun stdout, stderr, exit statuses and reports.
-- [ ] T060 Verify the harness reports PASS only when all gates execute successfully
+- [x] T060 Verify the harness reports PASS only when all gates execute successfully
   and at least one test suite has executed actual tests (SC-008).
 
 ---
@@ -296,13 +296,13 @@ CRUD execution remains dependent on persistence tasks T039–T042.
 
 **Purpose**: Student-owned acceptance, documentation and traceability only.
 
-- [ ] T061 Recheck FR-001–FR-019 and NFR-001–NFR-006 against implementation,
+- [x] T061 Recheck FR-001–FR-019 and NFR-001–NFR-006 against implementation,
   tests and evidence for no unsupported functionality or scope change.
-- [ ] T062 Recheck SC-001–SC-011 and map outcomes to machine-generated reports
+- [x] T062 Recheck SC-001–SC-011 and map outcomes to machine-generated reports
   and file locations (NFR-006).
-- [ ] T063 Leave evidence/harness-log.md for student-authored narrative,
+- [x] T063 Leave evidence/harness-log.md for student-authored narrative,
   actual outcomes, known limitations and explicit ACCEPT/REJECT decision.
-- [ ] T064 Do not generate narrative, reflection or human reasoning in this task
+- [x] T064 Do not generate narrative, reflection or human reasoning in this task
   phase; require explicit student review (constitution VIII).
 
 ---
