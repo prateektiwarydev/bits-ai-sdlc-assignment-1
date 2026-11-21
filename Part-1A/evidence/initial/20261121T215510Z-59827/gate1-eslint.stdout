@@ -1,0 +1,31 @@
+
+/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/cli.js
+  138:20  error  'structuredClone' is not defined  no-undef
+
+/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/cli/args.js
+  1:7  error  'fs' is assigned a value but never used  no-unused-vars
+
+/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/domain/task-service.js
+   10:10  error  'structuredClone' is not defined  no-undef
+   33:10  error  'structuredClone' is not defined  no-undef
+   37:10  error  'structuredClone' is not defined  no-undef
+  104:10  error  'structuredClone' is not defined  no-undef
+  116:10  error  'structuredClone' is not defined  no-undef
+  141:8   error  'structuredClone' is not defined  no-undef
+
+/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/persistence/json-store.js
+  69:12  error  '_' is defined but never used  no-unused-vars
+  79:12  error  '_' is defined but never used  no-unused-vars
+
+/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/priority-sort.test.js
+  12:20  error  'structuredClone' is not defined  no-undef
+
+/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/status-transition.test.js
+  15:20  error  'structuredClone' is not defined  no-undef
+
+/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/task-crud.test.js
+  44:20  error  'structuredClone' is not defined  no-undef
+  62:20  error  'structuredClone' is not defined  no-undef
+
+✖ 14 problems (14 errors, 0 warnings)
+

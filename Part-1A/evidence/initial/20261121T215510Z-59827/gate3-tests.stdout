@@ -1,0 +1,218 @@
+TAP version 13
+# Subtest: missing persistence file starts an empty collection
+ok 1 - missing persistence file starts an empty collection
+  ---
+  duration_ms: 50.61825
+  ...
+# Subtest: valid task state restores across separate CLI invocations
+not ok 2 - valid task state restores across separate CLI invocations
+  ---
+  duration_ms: 94.121541
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/persistence.test.js:24:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/persistence.test.js:34:12)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:633:18)
+    Test.postRun (node:internal/test_runner/test:1045:19)
+    Test.run (node:internal/test_runner/test:973:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: malformed JSON returns INVALID_JSON and does not overwrite
+ok 3 - malformed JSON returns INVALID_JSON and does not overwrite
+  ---
+  duration_ms: 43.751125
+  ...
+# Subtest: structurally invalid JSON returns INVALID_JSON without overwrite
+ok 4 - structurally invalid JSON returns INVALID_JSON without overwrite
+  ---
+  duration_ms: 42.843167
+  ...
+# Subtest: priority list is HIGH, MEDIUM, LOW with stable equal-priority ties
+ok 5 - priority list is HIGH, MEDIUM, LOW with stable equal-priority ties
+  ---
+  duration_ms: 52.448458
+  ...
+# Subtest: invalid priority update returns INVALID_INPUT without mutation
+ok 6 - invalid priority update returns INVALID_INPUT without mutation
+  ---
+  duration_ms: 48.326334
+  ...
+# Subtest: TODO to IN_PROGRESS to DONE is the legal transition sequence
+ok 7 - TODO to IN_PROGRESS to DONE is the legal transition sequence
+  ---
+  duration_ms: 97.591792
+  ...
+# Subtest: TODO to DONE skip is rejected and task remains TODO
+ok 8 - TODO to DONE skip is rejected and task remains TODO
+  ---
+  duration_ms: 44.728208
+  ...
+# Subtest: unknown transition ID and direct status update are non-mutating
+ok 9 - unknown transition ID and direct status update are non-mutating
+  ---
+  duration_ms: 85.152625
+  ...
+# Subtest: tag filter is exact and case-insensitive while excluding substrings
+not ok 10 - tag filter is exact and case-insensitive while excluding substrings
+  ---
+  duration_ms: 49.113834
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:18:12)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.start (node:internal/test_runner/test:833:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: task creation accepts repeated --tag flags without changing exact matching
+not ok 11 - task creation accepts repeated --tag flags without changing exact matching
+  ---
+  duration_ms: 93.131291
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:31:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:44:12)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:633:18)
+    Test.postRun (node:internal/test_runner/test:1045:19)
+    Test.run (node:internal/test_runner/test:973:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: empty, whitespace-only and non-string tag filters are INVALID_INPUT
+ok 12 - empty, whitespace-only and non-string tag filters are INVALID_INPUT
+  ---
+  duration_ms: 81.1565
+  ...
+# Subtest: CRUD lifecycle persists exact task fields and immutable ID
+ok 13 - CRUD lifecycle persists exact task fields and immutable ID
+  ---
+  duration_ms: 226.469583
+  ...
+# Subtest: blank title and invalid types return INVALID_INPUT without mutation
+ok 14 - blank title and invalid types return INVALID_INPUT without mutation
+  ---
+  duration_ms: 82.011083
+  ...
+# Subtest: missing required IDs use INVALID_INPUT and unknown selectors use TASK_NOT_FOUND
+ok 15 - missing required IDs use INVALID_INPUT and unknown selectors use TASK_NOT_FOUND
+  ---
+  duration_ms: 228.721791
+  ...
+# Subtest: ID and status cannot be changed through generic update
+ok 16 - ID and status cannot be changed through generic update
+  ---
+  duration_ms: 38.202541
+  ...
+# Subtest: missing persistence data initializes an empty task collection
+ok 17 - missing persistence data initializes an empty task collection
+  ---
+  duration_ms: 8.511791
+  ...
+# Subtest: malformed JSON returns INVALID_JSON without overwriting the file
+ok 18 - malformed JSON returns INVALID_JSON without overwriting the file
+  ---
+  duration_ms: 1.6095
+  ...
+# Subtest: valid JSON round trips all task fields
+ok 19 - valid JSON round trips all task fields
+  ---
+  duration_ms: 1.772375
+  ...
+# Subtest: structurally invalid JSON returns INVALID_JSON without overwrite
+ok 20 - structurally invalid JSON returns INVALID_JSON without overwrite
+  ---
+  duration_ms: 1.46725
+  ...
+# Subtest: priority sorting is HIGH, MEDIUM, LOW with stable ties
+ok 21 - priority sorting is HIGH, MEDIUM, LOW with stable ties
+  ---
+  duration_ms: 3.069125
+  ...
+# Subtest: TODO can advance to IN_PROGRESS and IN_PROGRESS to DONE
+ok 22 - TODO can advance to IN_PROGRESS and IN_PROGRESS to DONE
+  ---
+  duration_ms: 6.267666
+  ...
+# Subtest: illegal TODO to DONE skip leaves the task unchanged
+ok 23 - illegal TODO to DONE skip leaves the task unchanged
+  ---
+  duration_ms: 0.904208
+  ...
+# Subtest: backward and DONE outgoing transitions are rejected
+ok 24 - backward and DONE outgoing transitions are rejected
+  ---
+  duration_ms: 0.273084
+  ...
+# Subtest: tag matching is exact and case-insensitive
+ok 25 - tag matching is exact and case-insensitive
+  ---
+  duration_ms: 7.041084
+  ...
+# Subtest: empty, whitespace-only and non-string filters return INVALID_INPUT
+ok 26 - empty, whitespace-only and non-string filters return INVALID_INPUT
+  ---
+  duration_ms: 0.499208
+  ...
+# Subtest: CRUD exports and create defaults are available
+ok 27 - CRUD exports and create defaults are available
+  ---
+  duration_ms: 4.6365
+  ...
+# Subtest: blank, invalid-type, invalid-tag, and invalid-priority inputs are rejected
+ok 28 - blank, invalid-type, invalid-tag, and invalid-priority inputs are rejected
+  ---
+  duration_ms: 0.53475
+  ...
+# Subtest: CRUD operations preserve the collection and immutable ID
+ok 29 - CRUD operations preserve the collection and immutable ID
+  ---
+  duration_ms: 0.341958
+  ...
+# Subtest: unknown IDs produce TASK_NOT_FOUND without mutation
+ok 30 - unknown IDs produce TASK_NOT_FOUND without mutation
+  ---
+  duration_ms: 0.212083
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 27
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 639.212209
