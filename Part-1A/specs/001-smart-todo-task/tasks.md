@@ -59,7 +59,8 @@ and harness-prepared.
   (FR-001–FR-004, FR-012, FR-016, FR-019, SC-002, SC-009).
 - [ ] T010 [P] [US1] Create CLI CRUD contract cases in
   tests/contract/task-crud.test.js for machine-readable success/error results,
-  exit statuses, immutable `--id`, and exact non-mutation behavior
+  exit statuses, `--id` as the existing-task selector during update operations,
+  immutable stored task IDs, and exact non-mutation behavior
   (FR-002–FR-004, FR-017–FR-019).
 - [ ] T011 [P] [US2] Create exact case-insensitive tag unit cases in
   tests/unit/tag-filter.test.js, including exact matches, no substring matches,
@@ -343,9 +344,6 @@ T011 US2 tag unit tests
 T013 US3 persistence unit tests
 T015 US4 priority unit tests
 T017 US5 transition unit tests
-T023 Gate 1 configuration
-T024 Gate 2 configuration
-T026 Gate 3 test discovery
 ```
 
 ## Implementation Strategy

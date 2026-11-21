@@ -2,6 +2,9 @@
 
 ## Decision: Node.js 22 JavaScript
 
+**Engineering decision for human acceptance**: This is a proposed implementation
+choice, not a BITS-mandated requirement.
+
 **Decision**: Use Node.js 22 CommonJS or ES modules in JavaScript.
 
 **Rationale**: It is a deterministic local CLI platform with built-in JSON,
@@ -37,6 +40,11 @@ without a demonstrated need.
 
 **Decision**: Use Semgrep as the separate Security/SAST gate.
 
+**Engineering decision for human acceptance**: Semgrep is proposed for this
+project, not required by BITS Pilani. ESLint configuration and Semgrep registry/
+project rules remain implementation choices that must be reviewed and verified
+when setup begins.
+
 **Rationale**: Semgrep is static application-security analysis for JavaScript,
 can return JSON and text findings, and is available on macOS Apple Silicon.
 It is not a replacement for lint or syntax checking.
@@ -62,6 +70,10 @@ For reproducibility, pin the Semgrep version and add reviewed project rules.
 A rule-loading error MUST fail and MUST not be reported as an application
 security PASS.
 
+No ESLint or Semgrep version is recorded in this planning phase. Actual versions
+and rule behavior will be recorded during implementation setup; no scan or
+tool success will be claimed until it actually executes.
+
 **Alternatives considered**: ESLint alone, syntax checks, and dependency
 auditing cannot satisfy SAST because they do not independently perform
 security-focused static data-flow/rule analysis.
@@ -71,6 +83,9 @@ security-focused static data-flow/rule analysis.
 **Decision**: Propose sequential decimal string IDs such as `1`, `2`, `3`,
 with a persisted `nextId` or monotonic counter so deleted and restarted tasks
 cannot reuse or collide with existing IDs.
+
+This is a proposed engineering decision for human acceptance, not a
+BITS-mandated requirement.
 
 **Rationale**: The specification requires stable generated string identities
 but defers representation; a persisted counter is small and deterministic.
@@ -86,6 +101,9 @@ acceptable; no approved clarification currently requires UUIDs or a format.
 **Decision**: Use `data/tasks.json` under the Part 1A project root as the
 documented default. Allow `--data-file` or an environment variable for isolated
 tests.
+
+This storage design is proposed engineering, not a BITS-mandated implementation
+requirement.
 
 **Rationale**: This preserves JSON persistence and avoids accidental test
 mutation of real data.

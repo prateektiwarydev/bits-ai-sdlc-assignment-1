@@ -142,7 +142,9 @@ writes. Tests and evidence remain independently inspectable.
 
 ## Harness
 
-Gate 1 executes `node --check` over JavaScript source and
+Gate 1 discovers individual JavaScript source files under `src/`, executes
+`node --check <file>` separately for every discovered file, and fails if no
+source file is found or any individual syntax check fails. It also executes
 `eslint --config .harness/eslint.config.js "src/**/*.js" "tests/**/*.test.js"`.
 It is syntax/lint validation only.
 

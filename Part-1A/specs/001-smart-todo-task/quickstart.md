@@ -63,7 +63,9 @@ After implementation, run:
 
 The harness executes:
 
-1. JavaScript syntax checks and
+1. Discover individual JavaScript source files under `src/`, run
+   `node --check <file>` separately for every file, and fail if no source file
+   is found or any syntax check fails. Then run
    `eslint --config .harness/eslint.config.js "src/**/*.js" "tests/**/*.test.js"`
 2. Semgrep SAST against `src/**/*.js`, loading `p/javascript`,
    `p/security-audit`, and `.harness/semgrep.yml` with `--error`
