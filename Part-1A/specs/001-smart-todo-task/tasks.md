@@ -151,20 +151,20 @@ deletion after specification-derived tests and harness exist.
 **Independent Test**: Run US1 unit/contract tests against an isolated JSON file
 and verify exact CRUD state, validation, immutable IDs and non-mutation.
 
-- [ ] T031 [US1] Implement Task field types and validation in
+- [X] T031 [US1] Implement Task field types and validation in
   src/domain/validation.js for required nonblank string title, optional
   description default `""`, tags list default `[]`, priority `MEDIUM`,
   status `TODO`, and immutable ID (FR-001, FR-003, FR-012, FR-018).
-- [ ] T032 [US1] Implement in-memory task operations in
+- [X] T032 [US1] Implement in-memory task operations in
   src/domain/task-service.js for create, get, list, update and delete
   (FR-001–FR-004).
-- [ ] T033 [US1] Implement collision-safe sequential string ID generation in
+- [X] T033 [US1] Implement collision-safe sequential string ID generation in
   src/persistence/json-store.js using persisted `nextId`/counter state and
   sequence values never reused (FR-001, NFR-003).
-- [ ] T034 [US1] Implement US1 CLI argument parsing and presentation in
+- [X] T034 [US1] Implement US1 CLI argument parsing and presentation in
   src/cli/args.js and src/cli/presentation.js for create/get/list/update/delete
   (FR-001–FR-004, FR-017–FR-018).
-- [ ] T035 [US1] Prepare US1 CLI command integration in src/cli.js with
+- [X] T035 [US1] Prepare US1 CLI command integration in src/cli.js with
   `TaskService`; the end-to-end CRUD wiring depends on T039–T042 and must not
   be checkpointed as complete in this phase (FR-001–FR-004).
 
@@ -179,12 +179,12 @@ CRUD execution remains dependent on persistence tasks T039–T042.
 
 **Independent Test**: Run tag unit/contract tests against known tagged fixtures.
 
-- [ ] T036 [US2] Implement exact case-insensitive tag matching in
+- [X] T036 [US2] Implement exact case-insensitive tag matching in
   src/domain/task-service.js and validation of nonblank string filter input
   (FR-005–FR-006, FR-018–FR-019).
-- [ ] T037 [US2] Add `task filter-tag --tag` parsing/output in
+- [X] T037 [US2] Add `task filter-tag --tag` parsing/output in
   src/cli/args.js and src/cli/presentation.js (FR-006, FR-017–FR-018).
-- [ ] T038 [US2] Connect tag filter operation to the CLI entrypoint in src/cli.js
+- [X] T038 [US2] Connect tag filter operation to the CLI entrypoint in src/cli.js
   (FR-005–FR-006).
 
 **Checkpoint**: US2 tag matching is exact and independently testable.
@@ -197,15 +197,15 @@ CRUD execution remains dependent on persistence tasks T039–T042.
 
 **Independent Test**: Run persistence unit/contract tests with isolated files.
 
-- [ ] T039 [US3] Implement JSON document loading and structural validation in
+- [X] T039 [US3] Implement JSON document loading and structural validation in
   src/persistence/json-store.js for missing, valid, malformed and invalid-schema
   states (FR-007–FR-009, NFR-003).
-- [ ] T040 [US3] Implement atomic same-directory JSON writes in
+- [X] T040 [US3] Implement atomic same-directory JSON writes in
   src/persistence/json-store.js after successful mutations only
   (FR-007–FR-009, FR-019).
-- [ ] T041 [US3] Implement missing-file initialization and preserve malformed
+- [X] T041 [US3] Implement missing-file initialization and preserve malformed
   files unchanged in src/persistence/json-store.js (FR-009, FR-018–FR-019).
-- [ ] T042 [US3] Add configurable `--data-file` support in src/cli/args.js and
+- [X] T042 [US3] Add configurable `--data-file` support in src/cli/args.js and
   src/cli.js, defaulting to data/tasks.json (NFR-003–NFR-004).
 - [ ] T043 [US1] Complete and verify end-to-end CLI CRUD wiring in src/cli.js
   against the completed JSON persistence layer from T039–T042; verify isolated
@@ -222,11 +222,11 @@ CRUD execution remains dependent on persistence tasks T039–T042.
 
 **Independent Test**: Run priority unit/contract tests with ties and empty lists.
 
-- [ ] T044 [US4] Implement priority validation and stable descending sort in
+- [X] T044 [US4] Implement priority validation and stable descending sort in
   src/domain/task-service.js (FR-010–FR-012, SC-005).
-- [ ] T045 [US4] Add `task list --sort priority` parsing/output in
+- [X] T045 [US4] Add `task list --sort priority` parsing/output in
   src/cli/args.js and src/cli/presentation.js (FR-010, FR-017).
-- [ ] T046 [US4] Connect priority sorting to src/cli.js without changing stored
+- [X] T046 [US4] Connect priority sorting to src/cli.js without changing stored
   task order (FR-010–FR-011).
 
 **Checkpoint**: US4 priority behavior is independently testable.
@@ -239,15 +239,15 @@ CRUD execution remains dependent on persistence tasks T039–T042.
 
 **Independent Test**: Run transition unit/contract tests for success and rejection.
 
-- [ ] T047 [US5] Implement dedicated status transition validation in
+- [X] T047 [US5] Implement dedicated status transition validation in
   src/domain/task-service.js for TODO→IN_PROGRESS and IN_PROGRESS→DONE only
   (FR-013–FR-015, SC-006, SC-011).
-- [ ] T048 [US5] Prevent generic updates from changing status or ID in
+- [X] T048 [US5] Prevent generic updates from changing status or ID in
   src/domain/task-service.js and src/domain/validation.js
   (FR-003, FR-014, FR-019).
-- [ ] T049 [US5] Add `task transition --id --to` parsing/output in
+- [X] T049 [US5] Add `task transition --id --to` parsing/output in
   src/cli/args.js and src/cli/presentation.js (FR-013–FR-018).
-- [ ] T050 [US5] Connect transition behavior to src/cli.js and use
+- [X] T050 [US5] Connect transition behavior to src/cli.js and use
   `INVALID_TRANSITION`/`TASK_NOT_FOUND` where specified (FR-015, FR-018).
 
 **Checkpoint**: US5 lifecycle behavior is independently testable.
