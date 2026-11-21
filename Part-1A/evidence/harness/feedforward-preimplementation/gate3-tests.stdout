@@ -1,0 +1,420 @@
+TAP version 13
+# Subtest: missing persistence file starts empty
+not ok 1 - missing persistence file starts empty
+  ---
+  duration_ms: 50.565
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/persistence.test.js:8:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/persistence.test.js:12:10)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.start (node:internal/test_runner/test:833:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: malformed persistence file returns INVALID_JSON without overwrite
+not ok 2 - malformed persistence file returns INVALID_JSON without overwrite
+  ---
+  duration_ms: 38.272375
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/persistence.test.js:17:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 5
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 5
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/persistence.test.js:22:10)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:633:18)
+    Test.postRun (node:internal/test_runner/test:1045:19)
+    Test.run (node:internal/test_runner/test:973:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: priority list uses stable descending HIGH, MEDIUM, LOW output
+not ok 3 - priority list uses stable descending HIGH, MEDIUM, LOW output
+  ---
+  duration_ms: 48.844334
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/priority-sort.test.js:5:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/priority-sort.test.js:7:10)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.start (node:internal/test_runner/test:833:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: allowed and rejected transitions return deterministic outcomes
+not ok 4 - allowed and rejected transitions return deterministic outcomes
+  ---
+  duration_ms: 51.056584
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/status-transition.test.js:5:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/status-transition.test.js:7:10)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.start (node:internal/test_runner/test:833:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: tag filter rejects empty input with INVALID_INPUT
+not ok 5 - tag filter rejects empty input with INVALID_INPUT
+  ---
+  duration_ms: 47.593041
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:5:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 2
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 2
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:7:10)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.start (node:internal/test_runner/test:833:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: tag filter uses exact case-insensitive matching
+not ok 6 - tag filter uses exact case-insensitive matching
+  ---
+  duration_ms: 38.337417
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/tag-filter.test.js:13:10)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:633:18)
+    Test.postRun (node:internal/test_runner/test:1045:19)
+    Test.run (node:internal/test_runner/test:973:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: CLI task update selector does not alter the stored ID
+not ok 7 - CLI task update selector does not alter the stored ID
+  ---
+  duration_ms: 47.572542
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/task-crud.test.js:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 0
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/task-crud.test.js:13:10)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.start (node:internal/test_runner/test:833:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: CLI blank title returns INVALID_INPUT and no mutation
+not ok 8 - CLI blank title returns INVALID_INPUT and no mutation
+  ---
+  duration_ms: 39.86975
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/task-crud.test.js:19:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 2
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 2
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/contract/task-crud.test.js:21:10)
+    Test.runInAsyncScope (node:async_hooks:211:14)
+    Test.run (node:internal/test_runner/test:934:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:633:18)
+    Test.postRun (node:internal/test_runner/test:1045:19)
+    Test.run (node:internal/test_runner/test:973:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: missing persistence data initializes an empty task collection
+not ok 9 - missing persistence data initializes an empty task collection
+  ---
+  duration_ms: 1.029084
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/json-store.test.js:6:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/persistence/json-store.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/json-store.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: malformed JSON returns INVALID_JSON without overwriting the file
+not ok 10 - malformed JSON returns INVALID_JSON without overwriting the file
+  ---
+  duration_ms: 0.228166
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/json-store.test.js:16:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/persistence/json-store.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/json-store.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: valid JSON round trips all task fields
+not ok 11 - valid JSON round trips all task fields
+  ---
+  duration_ms: 0.214584
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/json-store.test.js:28:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/persistence/json-store.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/json-store.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: priority sorting is HIGH, MEDIUM, LOW with stable ties
+not ok 12 - priority sorting is HIGH, MEDIUM, LOW with stable ties
+  ---
+  duration_ms: 1.337625
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/priority-sort.test.js:4:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/domain/task-service.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/priority-sort.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: only adjacent forward status transitions succeed
+not ok 13 - only adjacent forward status transitions succeed
+  ---
+  duration_ms: 0.981542
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/status-transition.test.js:4:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/domain/task-service.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/status-transition.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: backward, skipped and DONE outgoing transitions are rejected
+not ok 14 - backward, skipped and DONE outgoing transitions are rejected
+  ---
+  duration_ms: 0.423167
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/status-transition.test.js:10:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/domain/task-service.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/status-transition.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: tag matching is exact and case-insensitive
+not ok 15 - tag matching is exact and case-insensitive
+  ---
+  duration_ms: 1.010917
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/tag-filter.test.js:4:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/domain/task-service.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/tag-filter.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: empty, whitespace-only and non-string filters are invalid
+not ok 16 - empty, whitespace-only and non-string filters are invalid
+  ---
+  duration_ms: 0.311125
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/tag-filter.test.js:13:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/domain/task-service.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/tag-filter.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: CRUD domain module exposes create/get/list/update/delete
+not ok 17 - CRUD domain module exposes create/get/list/update/delete
+  ---
+  duration_ms: 0.970958
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/task-crud.test.js:4:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/domain/task-service.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/task-crud.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: blank titles and invalid field values are rejected
+not ok 18 - blank titles and invalid field values are rejected
+  ---
+  duration_ms: 0.284
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/task-crud.test.js:13:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/domain/validation.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/task-crud.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+# Subtest: task creation defaults description, tags, priority and status
+not ok 19 - task creation defaults description, tags, priority and status
+  ---
+  duration_ms: 0.172542
+  location: '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/task-crud.test.js:26:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module '/Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/src/domain/validation.js' imported from /Users/prateek/Documents/BITS Pilani MTech in Software Engineering/AI SDLC/Assignment_1/Part-1A/tests/unit/task-crud.test.js"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    moduleResolve (node:internal/modules/esm/resolve:913:10)
+    defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:542:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:337:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:541:21)
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 0
+# fail 19
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 160.321625

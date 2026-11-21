@@ -1,0 +1,7 @@
+{
+  "run": "feedforward-preimplementation",
+  "gate1SyntaxLint": 1,
+  "gate2Sast": 1,
+  "gate3Tests": 1,
+  "overall": "FAIL"
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "nextId": 2,
+  "tasks": [
+    {
+      "id": "1",
+      "sequence": 1,
+      "title": "Example",
+      "description": "",
+      "tags": [],
+      "priority": "MEDIUM",
+      "status": "TODO"
+    }
+  ]
+}

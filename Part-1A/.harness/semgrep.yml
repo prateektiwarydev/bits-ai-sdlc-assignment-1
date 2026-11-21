@@ -1,0 +1,15 @@
+rules:
+  - id: part1a-no-child-process-exec
+    languages: [javascript]
+    severity: ERROR
+    message: "Use of child_process.exec or execSync is prohibited in this CLI."
+    pattern-either:
+      - pattern: child_process.exec(...)
+      - pattern: require("child_process").exec(...)
+      - pattern: child_process.execSync(...)
+      - pattern: require("child_process").execSync(...)
+  - id: part1a-no-eval
+    languages: [javascript]
+    severity: ERROR
+    message: "Dynamic eval is prohibited."
+    pattern: eval(...)

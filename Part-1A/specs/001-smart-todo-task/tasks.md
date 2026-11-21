@@ -20,27 +20,27 @@ independent test coverage.
 
 ## Phase 1: Setup (Shared Infrastructure)
 
-- [ ] T001 Create Node.js 22 package structure in package.json and src/, tests/,
+- [X] T001 Create Node.js 22 package structure in package.json and src/, tests/,
   .harness/, evidence/, and data/ per specs/001-smart-todo-task/plan.md.
-- [ ] T002 Create built-in test/package scripts in package.json for
+- [X] T002 Create built-in test/package scripts in package.json for
   `node --test "tests/**/*.test.js"` and project utilities.
-- [ ] T003 Configure JavaScript syntax discovery and package scripts in
+- [X] T003 Configure JavaScript syntax discovery and package scripts in
   package.json: find each individual JavaScript file under src/ and invoke
   `node --check <file>` separately for every file; fail if no source file is
   found or any individual check fails.
-- [ ] T004 [P] Create explicit ESLint configuration in
+- [X] T004 [P] Create explicit ESLint configuration in
   .harness/eslint.config.js and document
   `eslint --config .harness/eslint.config.js "src/**/*.js" "tests/**/*.test.js"`.
-- [ ] T005 [P] Create project-local Semgrep configuration in
+- [X] T005 [P] Create project-local Semgrep configuration in
   .harness/semgrep.yml for use alongside `p/javascript` and
   `p/security-audit`.
-- [ ] T006 [P] Exclude mutable runtime JSON in .gitignore, including
+- [X] T006 [P] Exclude mutable runtime JSON in .gitignore, including
   data/*.json, and preserve harness evidence (evidence/initial/, evidence/final/,
   evidence/harness/) under version-control rules appropriate for the assignment
   without committing mutable runtime JSON.
-- [ ] T007 [P] Create test fixture directories and an isolated data-path helper
+- [X] T007 [P] Create test fixture directories and an isolated data-path helper
   under tests/fixtures/ and tests/helpers/ for deterministic temporary storage.
-- [ ] T008 Create initial evidence directories evidence/initial/,
+- [X] T008 Create initial evidence directories evidence/initial/,
   evidence/final/, evidence/harness/, and evidence/keep/ (human narrative is
   separate) per the constitution.
 
@@ -53,53 +53,53 @@ independent test coverage.
 **Checkpoint**: Test fixtures and exact acceptance expectations are inspectable
 and harness-prepared.
 
-- [ ] T009 [P] [US1] Create CRUD unit test cases in
+- [X] T009 [P] [US1] Create CRUD unit test cases in
   tests/unit/task-crud.test.js covering create, get, list, update, delete,
   blank title, invalid field types, invalid tags, immutable ID, and non-mutation
   (FR-001–FR-004, FR-012, FR-016, FR-019, SC-002, SC-009).
-- [ ] T010 [P] [US1] Create CLI CRUD contract cases in
+- [X] T010 [P] [US1] Create CLI CRUD contract cases in
   tests/contract/task-crud.test.js for machine-readable success/error results,
   exit statuses, `--id` as the existing-task selector during update operations,
   immutable stored task IDs, and exact non-mutation behavior
   (FR-002–FR-004, FR-017–FR-019).
-- [ ] T011 [P] [US2] Create exact case-insensitive tag unit cases in
+- [X] T011 [P] [US2] Create exact case-insensitive tag unit cases in
   tests/unit/tag-filter.test.js, including exact matches, no substring matches,
   zero matches, mixed case, empty, whitespace-only, and non-string input
   (FR-005–FR-006, FR-016, FR-019, SC-003, SC-010).
-- [ ] T012 [P] [US2] Create tag filter CLI contract cases in
+- [X] T012 [P] [US2] Create tag filter CLI contract cases in
   tests/contract/tag-filter.test.js for `--tag`, `INVALID_INPUT`, JSON output,
   exit status 2, and unchanged task data (FR-006, FR-018–FR-019).
-- [ ] T013 [P] [US3] Create persistence unit cases in
+- [X] T013 [P] [US3] Create persistence unit cases in
   tests/unit/json-store.test.js for missing file, valid round trip, malformed
   JSON, structurally invalid JSON, non-mutation, and atomic write behavior
   (FR-007–FR-009, FR-016, FR-019, NFR-003, SC-004, SC-007).
-- [ ] T014 [P] [US3] Create persistence CLI contract cases in
+- [X] T014 [P] [US3] Create persistence CLI contract cases in
   tests/contract/persistence.test.js for missing-file startup, valid restore,
   `INVALID_JSON`, no overwrite, isolated data paths, and exact error output
   (FR-007–FR-009, FR-018–FR-019).
-- [ ] T015 [P] [US4] Create stable priority unit cases in
+- [X] T015 [P] [US4] Create stable priority unit cases in
   tests/unit/priority-sort.test.js for HIGH, MEDIUM, LOW, empty/single
   collections, equal priorities, and invalid priority rejection
   (FR-010–FR-012, SC-005).
-- [ ] T016 [P] [US4] Create priority CLI contract cases in
+- [X] T016 [P] [US4] Create priority CLI contract cases in
   tests/contract/priority-sort.test.js for descending machine-readable output,
   stable tie order, invalid priority `INVALID_INPUT`, and no mutation
   (FR-010–FR-012, FR-018–FR-019).
-- [ ] T017 [P] [US5] Create status-transition unit cases in
+- [X] T017 [P] [US5] Create status-transition unit cases in
   tests/unit/status-transition.test.js for TODO→IN_PROGRESS,
   IN_PROGRESS→DONE, backward/skipped/DONE transitions, unknown IDs,
   direct status/ID update rejection, and successful mutation only
   (FR-013–FR-015, FR-019, SC-006, SC-011).
-- [ ] T018 [P] [US5] Create status-transition CLI contract cases in
+- [X] T018 [P] [US5] Create status-transition CLI contract cases in
   tests/contract/status-transition.test.js for success, `INVALID_TRANSITION`,
   `TASK_NOT_FOUND`, `INVALID_INPUT`, exit statuses, and unchanged data
   (FR-013–FR-019).
-- [ ] T019 [P] Create fixture JSON for valid, missing, malformed, and
+- [X] T019 [P] Create fixture JSON for valid, missing, malformed, and
   structurally invalid persistence states under tests/fixtures/persistence/.
-- [ ] T020 [P] Create exact expected-result fixtures under tests/fixtures/results/
+- [X] T020 [P] Create exact expected-result fixtures under tests/fixtures/results/
   for success objects, error objects, exit statuses, priority order, tag
   matches, and transition outcomes.
-- [ ] T021 Create a traceability matrix in tests/traceability.md mapping FR,
+- [X] T021 Create a traceability matrix in tests/traceability.md mapping FR,
   NFR, acceptance scenarios and SC cases to unit and contract test files
   (NFR-006, SC-001, SC-007).
 
@@ -109,34 +109,34 @@ and harness-prepared.
 
 **Purpose**: Prepare all mandatory gates before initial application execution.
 
-- [ ] T022 Create harness entrypoint .harness/run.sh that invokes every
+- [X] T022 Create harness entrypoint .harness/run.sh that invokes every
   mandatory gate and exits nonzero if any gate fails (NFR-005).
-- [ ] T023 Implement Gate 1 in .harness/run.sh using reliable individual-file
+- [X] T023 Implement Gate 1 in .harness/run.sh using reliable individual-file
   discovery and separate `node --check <file>` invocations for every JavaScript
   source file, plus
   `eslint --config .harness/eslint.config.js "src/**/*.js" "tests/**/*.test.js"`
   (NFR-005, SC-008). Fail if no application JavaScript file is found or any
   syntax check fails.
-- [ ] T024 Implement Gate 2 in .harness/run.sh using Semgrep with
+- [X] T024 Implement Gate 2 in .harness/run.sh using Semgrep with
   `p/javascript`, `p/security-audit`, `.harness/semgrep.yml`, `--error`, and
   actual `src/**/*.js` targets (NFR-005, SC-008).
-- [ ] T025 Implement Semgrep result handling in .harness/run.sh and
+- [X] T025 Implement Semgrep result handling in .harness/run.sh and
   evidence/harness/ to fail on findings, invalid rules, rule-loading/scan
   tool errors, missing application source, or missing scan output (NFR-005,
   SC-008).
-- [ ] T026 Implement Gate 3 in .harness/run.sh to verify both unit and contract
+- [X] T026 Implement Gate 3 in .harness/run.sh to verify both unit and contract
   suites have at least one `tests/**/*.test.js` file, execute
   `node --test "tests/**/*.test.js"`, and fail if either suite is missing, no
   matching test file exists, or zero tests execute
   (NFR-002, NFR-005, SC-007–SC-011).
-- [ ] T027 Add per-gate stdout/stderr/exit-status capture to .harness/run.sh
+- [X] T027 Add per-gate stdout/stderr/exit-status capture to .harness/run.sh
   and timestamped or run-specific evidence under evidence/harness/.
-- [ ] T028 Add overall harness summary generation to .harness/run.sh that
+- [X] T028 Add overall harness summary generation to .harness/run.sh that
   records all gate outcomes without rewriting earlier runs or inventing values
   (NFR-005–NFR-006, SC-008).
-- [ ] T029 [P] Add `.harness/` configuration for deterministic environment and
+- [X] T029 [P] Add `.harness/` configuration for deterministic environment and
   isolated `--data-file` test paths without mutating data/tasks.json.
-- [ ] T030 Add evidence ownership and AI-use restrictions to .harness/run.sh
+- [X] T030 Add evidence ownership and AI-use restrictions to .harness/run.sh
   comments or output: machine data only; student-authored harness narrative,
   reflection and ACCEPT/REJECT are not generated (constitution principles V,
   VII, VIII).
