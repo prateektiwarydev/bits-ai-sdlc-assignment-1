@@ -35,7 +35,7 @@ to clarification or planning
 
 ## Review Notes
 
-- The specification is ready for human review and the clarification stage.
-- The three grouped unresolved questions are intentionally not answered here.
-- Planning and implementation MUST wait until the student reviews this
-  specification and the clarification decisions are recorded.
+- Specification clarification and technical planning artifacts have occurred.
+- These historical checklist results are unchanged and do not claim that the
+  specification or plan has received human approval.
+- The remaining planning decisions require human review before implementation.
