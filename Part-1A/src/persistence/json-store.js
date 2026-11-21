@@ -66,7 +66,7 @@ function loadStore(dataFile) {
   let text;
   try {
     text = fs.readFileSync(dataFile, "utf8");
-  } catch (_) {
+  } catch {
     throw error("INVALID_JSON");
   }
   if (text.trim().length === 0) {
@@ -76,7 +76,7 @@ function loadStore(dataFile) {
   let document;
   try {
     document = JSON.parse(text);
-  } catch (_) {
+  } catch {
     throw error("INVALID_JSON");
   }
   if (!isValidStore(document)) {
@@ -101,9 +101,9 @@ function saveStore(dataFile, document) {
       flag: "wx",
     });
     fs.renameSync(temporary, dataFile);
-  } catch (_) {
+  } catch (errorValue) {
     if (fs.existsSync(temporary)) fs.unlinkSync(temporary);
-    throw _;
+    throw errorValue;
   }
 }
 

@@ -120,7 +120,16 @@ function run(argv) {
     }
 
     if (operation === "filter-tag") {
-      const tag = argsModule.requireValue(args, "tag");
+      if (
+        !Array.isArray(args.tags) ||
+        args.tags.length !== 1
+      ) {
+        throw { code: "INVALID_INPUT" };
+      }
+      const tag = argsModule.requireValue(
+        { tag: args.tags[0] },
+        "tag",
+      );
       const tasks = taskService.filterTasksByTag(
         taskService.listTasks(collection),
         tag,

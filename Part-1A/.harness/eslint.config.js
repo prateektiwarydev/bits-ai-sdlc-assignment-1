@@ -11,6 +11,7 @@ const commonjsGlobals = {
   clearTimeout: "readonly",
   setInterval: "readonly",
   clearInterval: "readonly",
+  structuredClone: "readonly",
 };
 
 module.exports = [

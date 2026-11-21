@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: missing persistence file starts an empty collection
+ok 1 - missing persistence file starts an empty collection
+  ---
+  duration_ms: 50.593167
+  ...
+# Subtest: valid task state restores across separate CLI invocations
+ok 2 - valid task state restores across separate CLI invocations
+  ---
+  duration_ms: 89.825917
+  ...
+# Subtest: malformed JSON returns INVALID_JSON and does not overwrite
+ok 3 - malformed JSON returns INVALID_JSON and does not overwrite
+  ---
+  duration_ms: 41.9565
+  ...
+# Subtest: structurally invalid JSON returns INVALID_JSON without overwrite
+ok 4 - structurally invalid JSON returns INVALID_JSON without overwrite
+  ---
+  duration_ms: 43.076125
+  ...
+# Subtest: priority list is HIGH, MEDIUM, LOW with stable equal-priority ties
+ok 5 - priority list is HIGH, MEDIUM, LOW with stable equal-priority ties
+  ---
+  duration_ms: 46.555458
+  ...
+# Subtest: invalid priority update returns INVALID_INPUT without mutation
+ok 6 - invalid priority update returns INVALID_INPUT without mutation
+  ---
+  duration_ms: 49.665041
+  ...
+# Subtest: TODO to IN_PROGRESS to DONE is the legal transition sequence
+ok 7 - TODO to IN_PROGRESS to DONE is the legal transition sequence
+  ---
+  duration_ms: 98.189083
+  ...
+# Subtest: TODO to DONE skip is rejected and task remains TODO
+ok 8 - TODO to DONE skip is rejected and task remains TODO
+  ---
+  duration_ms: 44.208125
+  ...
+# Subtest: unknown transition ID and direct status update are non-mutating
+ok 9 - unknown transition ID and direct status update are non-mutating
+  ---
+  duration_ms: 80.628209
+  ...
+# Subtest: tag filter is exact and case-insensitive while excluding substrings
+ok 10 - tag filter is exact and case-insensitive while excluding substrings
+  ---
+  duration_ms: 99.822125
+  ...
+# Subtest: task creation accepts repeated --tag flags without changing exact matching
+ok 11 - task creation accepts repeated --tag flags without changing exact matching
+  ---
+  duration_ms: 81.212542
+  ...
+# Subtest: empty, whitespace-only and non-string tag filters are INVALID_INPUT
+ok 12 - empty, whitespace-only and non-string tag filters are INVALID_INPUT
+  ---
+  duration_ms: 81.03275
+  ...
+# Subtest: CRUD lifecycle persists exact task fields and immutable ID
+ok 13 - CRUD lifecycle persists exact task fields and immutable ID
+  ---
+  duration_ms: 235.705667
+  ...
+# Subtest: blank title and invalid types return INVALID_INPUT without mutation
+ok 14 - blank title and invalid types return INVALID_INPUT without mutation
+  ---
+  duration_ms: 77.882084
+  ...
+# Subtest: missing required IDs use INVALID_INPUT and unknown selectors use TASK_NOT_FOUND
+ok 15 - missing required IDs use INVALID_INPUT and unknown selectors use TASK_NOT_FOUND
+  ---
+  duration_ms: 229.842
+  ...
+# Subtest: ID and status cannot be changed through generic update
+ok 16 - ID and status cannot be changed through generic update
+  ---
+  duration_ms: 39.664708
+  ...
+# Subtest: missing persistence data initializes an empty task collection
+ok 17 - missing persistence data initializes an empty task collection
+  ---
+  duration_ms: 6.091333
+  ...
+# Subtest: malformed JSON returns INVALID_JSON without overwriting the file
+ok 18 - malformed JSON returns INVALID_JSON without overwriting the file
+  ---
+  duration_ms: 1.505
+  ...
+# Subtest: valid JSON round trips all task fields
+ok 19 - valid JSON round trips all task fields
+  ---
+  duration_ms: 0.782041
+  ...
+# Subtest: structurally invalid JSON returns INVALID_JSON without overwrite
+ok 20 - structurally invalid JSON returns INVALID_JSON without overwrite
+  ---
+  duration_ms: 0.557583
+  ...
+# Subtest: priority sorting is HIGH, MEDIUM, LOW with stable ties
+ok 21 - priority sorting is HIGH, MEDIUM, LOW with stable ties
+  ---
+  duration_ms: 3.058167
+  ...
+# Subtest: TODO can advance to IN_PROGRESS and IN_PROGRESS to DONE
+ok 22 - TODO can advance to IN_PROGRESS and IN_PROGRESS to DONE
+  ---
+  duration_ms: 6.435125
+  ...
+# Subtest: illegal TODO to DONE skip leaves the task unchanged
+ok 23 - illegal TODO to DONE skip leaves the task unchanged
+  ---
+  duration_ms: 1.457166
+  ...
+# Subtest: backward and DONE outgoing transitions are rejected
+ok 24 - backward and DONE outgoing transitions are rejected
+  ---
+  duration_ms: 0.271125
+  ...
+# Subtest: tag matching is exact and case-insensitive
+ok 25 - tag matching is exact and case-insensitive
+  ---
+  duration_ms: 3.229334
+  ...
+# Subtest: empty, whitespace-only and non-string filters return INVALID_INPUT
+ok 26 - empty, whitespace-only and non-string filters return INVALID_INPUT
+  ---
+  duration_ms: 0.226042
+  ...
+# Subtest: CRUD exports and create defaults are available
+ok 27 - CRUD exports and create defaults are available
+  ---
+  duration_ms: 7.733791
+  ...
+# Subtest: blank, invalid-type, invalid-tag, and invalid-priority inputs are rejected
+ok 28 - blank, invalid-type, invalid-tag, and invalid-priority inputs are rejected
+  ---
+  duration_ms: 0.28475
+  ...
+# Subtest: CRUD operations preserve the collection and immutable ID
+ok 29 - CRUD operations preserve the collection and immutable ID
+  ---
+  duration_ms: 0.326708
+  ...
+# Subtest: unknown IDs produce TASK_NOT_FOUND without mutation
+ok 30 - unknown IDs produce TASK_NOT_FOUND without mutation
+  ---
+  duration_ms: 0.2075
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 654.419042
