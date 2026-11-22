@@ -1,0 +1,26 @@
+{
+  "run_commit": "0f38abe",
+  "run_path": "evidence/repairs/iteration-3/re-evaluation",
+  "dataset_id": "natural-language-reminder-agent-v1",
+  "dataset_version": "1.0",
+  "model": "qwen2.5:3b",
+  "timezone": "Asia/Kolkata",
+  "attempted": 18,
+  "completed": 18,
+  "semantic_successes": 15,
+  "semantic_success_rate": 0.8333333333333334,
+  "structural_passes": 18,
+  "structural_pass_rate": 1,
+  "safety_violations": 0,
+  "service_errors": 0,
+  "skipped_cases": 0,
+  "evidence_complete": true,
+  "overall": "PASS",
+  "started_at": "2026-11-22T19:17:20.711Z",
+  "completed_at": "2026-11-22T19:17:54.333Z",
+  "known_semantic_failures": [
+    "C03",
+    "R03",
+    "S02"
+  ]
+}

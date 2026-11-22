@@ -1,0 +1,10 @@
+{
+  "id": "A03",
+  "input": "Create a reminder for lunch and also reschedule it to yesterday.",
+  "reference_timestamp": "2026-11-22T09:00:00+05:30",
+  "timezone": "Asia/Kolkata",
+  "raw_model_response": "{\n  \"action\": \"clarification\",\n  \"question\": \"Which specific reminder do you want to create and reschedule, and what is the new scheduled datetime?\"\n}",
+  "raw_response_recorded": true,
+  "status": "model_response",
+  "captured_at": "2026-11-22T16:31:23.874Z"
+}

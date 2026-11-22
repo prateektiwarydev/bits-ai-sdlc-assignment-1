@@ -1,0 +1,10 @@
+{
+  "id": "X01",
+  "input": "Remind me to pay rent later.",
+  "reference_timestamp": "2026-11-22T09:00:00+05:30",
+  "timezone": "Asia/Kolkata",
+  "raw_model_response": "{\n  \"schema_version\": \"1.0\",\n  \"intent\": \"clarification\",\n  \"task\": null,\n  \"target_reminder\": null,\n  \"scheduled_datetime\": null,\n  \"snooze_duration\": null,\n  \"clarification_question\": \"Could you please specify the exact time you want the reminder sent and how many minutes you want to snooze it by if needed? (If you don't need snoozing, just provide the time.)\",\n  \"error_reason\": null\n}",
+  "raw_response_recorded": true,
+  "status": "model_response",
+  "captured_at": "2026-11-22T18:44:07.529Z"
+}

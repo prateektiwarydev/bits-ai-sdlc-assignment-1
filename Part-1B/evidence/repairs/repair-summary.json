@@ -1,0 +1,25 @@
+{
+  "repair_status": "applied",
+  "original_evaluation_commit": "6157735",
+  "initial_source_commit": "be0e2f6",
+  "changed_files": [
+    "src/model/prompt.js",
+    "src/model/ollama-client.js",
+    "src/app.js",
+    "tests/model/prompt.test.js",
+    "tests/model/ollama-client.test.js",
+    "tests/integration/application.test.js",
+    "package.json"
+  ],
+  "failed_case_ids": [
+    "C01", "C02", "C03", "C04",
+    "R01", "R02", "R03", "R04",
+    "S01", "S02", "S03", "S04",
+    "X01", "X02", "X03",
+    "A01", "A02", "A03"
+  ],
+  "root_cause": "Incomplete model JSON plus validation-failure return shape; Ollama format only requested generic JSON.",
+  "benchmark_modified": false,
+  "threshold_modified": false,
+  "genuine_evaluation_repeated": false
+}

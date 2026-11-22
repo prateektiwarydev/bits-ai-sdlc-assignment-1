@@ -1,0 +1,252 @@
+{
+  "verification_status": "verified",
+  "source_commit": "ed501cf",
+  "source_commit_full": "ed501cfc86953dcc86ee7e0075e87fd97749c414",
+  "evaluation_commit": "0f38abe",
+  "snapshot_path": "evidence/final/source-snapshot",
+  "file_count": 40,
+  "all_files_match_source_commit": true,
+  "changed_from_source_commit": [],
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "2d6c3fb80ec59ac159c8bf405588978f4ff39342f1e428c582f58bbc26ca9eb6",
+      "source_commit_sha256": "2d6c3fb80ec59ac159c8bf405588978f4ff39342f1e428c582f58bbc26ca9eb6",
+      "matches_source_commit": true
+    },
+    {
+      "path": "evals/aggregate.js",
+      "sha256": "ff1dfd6e2fd71ba8b2ab4af5a14cadd2a3853f7a92e95f7a5b9f05b5dad19f73",
+      "source_commit_sha256": "ff1dfd6e2fd71ba8b2ab4af5a14cadd2a3853f7a92e95f7a5b9f05b5dad19f73",
+      "matches_source_commit": true
+    },
+    {
+      "path": "evals/capture-initial-evidence.js",
+      "sha256": "e197e7bf91ff7270362fc1183e54652de2476c3e5a913d74cc5c681c067a261c",
+      "source_commit_sha256": "e197e7bf91ff7270362fc1183e54652de2476c3e5a913d74cc5c681c067a261c",
+      "matches_source_commit": true
+    },
+    {
+      "path": "evals/capture-iteration-2-evaluation.js",
+      "sha256": "821f6d203c4b5636b39f025968d43ebab7bcaedbf7e50bf0eee28b10cd0e2037",
+      "source_commit_sha256": "821f6d203c4b5636b39f025968d43ebab7bcaedbf7e50bf0eee28b10cd0e2037",
+      "matches_source_commit": true
+    },
+    {
+      "path": "evals/capture-re-evaluation-evidence.js",
+      "sha256": "0cc9bf6fdf485f820d7b6eeb7e4dee30109b990e457a565cc29bfc3195c1fce7",
+      "source_commit_sha256": "0cc9bf6fdf485f820d7b6eeb7e4dee30109b990e457a565cc29bfc3195c1fce7",
+      "matches_source_commit": true
+    },
+    {
+      "path": "evals/dataset.json",
+      "sha256": "0db5b8e3258a1747b9483fc8a30303a59cfb2def3dac2b40c0e33cc7f949b62a",
+      "source_commit_sha256": "0db5b8e3258a1747b9483fc8a30303a59cfb2def3dac2b40c0e33cc7f949b62a",
+      "matches_source_commit": true
+    },
+    {
+      "path": "evals/invariant-validator.js",
+      "sha256": "dc92994107bd4782f0cc451763e32773afb58627682dcf9ac89a0d5d154a077b",
+      "source_commit_sha256": "dc92994107bd4782f0cc451763e32773afb58627682dcf9ac89a0d5d154a077b",
+      "matches_source_commit": true
+    },
+    {
+      "path": "evals/run-evaluation.js",
+      "sha256": "17e25e0a364adf583c89d4bed39e8a31608bd693b5fb3d54c44608f02c5cd397",
+      "source_commit_sha256": "17e25e0a364adf583c89d4bed39e8a31608bd693b5fb3d54c44608f02c5cd397",
+      "matches_source_commit": true
+    },
+    {
+      "path": "evals/schema-validator.js",
+      "sha256": "5c1309a5357884b8604f9a68704ac1f98e4929c1404f5871f8b55de63f4b83a6",
+      "source_commit_sha256": "5c1309a5357884b8604f9a68704ac1f98e4929c1404f5871f8b55de63f4b83a6",
+      "matches_source_commit": true
+    },
+    {
+      "path": "evals/semantic-evaluator.js",
+      "sha256": "22d222e8bf2348c7ec539fae5b75605e7c185a66b07b11dd7b98bec6ae82b2de",
+      "source_commit_sha256": "22d222e8bf2348c7ec539fae5b75605e7c185a66b07b11dd7b98bec6ae82b2de",
+      "matches_source_commit": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "e82582da5d8a1519363d24f2fa57be1848ea52a9e45288641f47d362517a272c",
+      "source_commit_sha256": "e82582da5d8a1519363d24f2fa57be1848ea52a9e45288641f47d362517a272c",
+      "matches_source_commit": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "ee3ae94844302eb076af5c45dd6d183597929fc31609db8a2cfe93036ad857f9",
+      "source_commit_sha256": "ee3ae94844302eb076af5c45dd6d183597929fc31609db8a2cfe93036ad857f9",
+      "matches_source_commit": true
+    },
+    {
+      "path": "specs/001-ai-reminder-agent/contracts/ollama-api.md",
+      "sha256": "206b04c63020d85985d0b2a2055206ed64936d80b77d7823f8c790172e9c52b8",
+      "source_commit_sha256": "206b04c63020d85985d0b2a2055206ed64936d80b77d7823f8c790172e9c52b8",
+      "matches_source_commit": true
+    },
+    {
+      "path": "specs/001-ai-reminder-agent/contracts/output-schema.json",
+      "sha256": "9960d2cfef7b4b69698916d49675d6442d47632fa0f29ba85c0598a2e3ceb69d",
+      "source_commit_sha256": "9960d2cfef7b4b69698916d49675d6442d47632fa0f29ba85c0598a2e3ceb69d",
+      "matches_source_commit": true
+    },
+    {
+      "path": "specs/001-ai-reminder-agent/quickstart.md",
+      "sha256": "bf4d950cf146a886c2dcc040e29d2182d397ad4a14a21db28b084d14a5d9bd22",
+      "source_commit_sha256": "bf4d950cf146a886c2dcc040e29d2182d397ad4a14a21db28b084d14a5d9bd22",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/app.js",
+      "sha256": "a87c4017dacbb587f944c8884499bbbfc2c0b1a15449d61dc3da1f95e9e18172",
+      "source_commit_sha256": "a87c4017dacbb587f944c8884499bbbfc2c0b1a15449d61dc3da1f95e9e18172",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/cli/presentation.js",
+      "sha256": "8d716b8facf940b238b0a203667c28d8289ec5c7a20fe646b011519fdb441397",
+      "source_commit_sha256": "8d716b8facf940b238b0a203667c28d8289ec5c7a20fe646b011519fdb441397",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/cli.js",
+      "sha256": "4a20139b3d180b07ddd5dafaac51f08a4c4e8bf7a8ecc89fc28b5ea2aaa051e1",
+      "source_commit_sha256": "4a20139b3d180b07ddd5dafaac51f08a4c4e8bf7a8ecc89fc28b5ea2aaa051e1",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/config/runtime.js",
+      "sha256": "28df65fd26f294aac82cd74d5410c5509b32c504245e5359d1c161c228c91d9d",
+      "source_commit_sha256": "28df65fd26f294aac82cd74d5410c5509b32c504245e5359d1c161c228c91d9d",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/errors.js",
+      "sha256": "b9eb56043a0fda21a354a22e9ef40c3bbcaa1ca694813c3e7ff0409e4473ee76",
+      "source_commit_sha256": "b9eb56043a0fda21a354a22e9ef40c3bbcaa1ca694813c3e7ff0409e4473ee76",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/model/ollama-client.js",
+      "sha256": "373939b8e3b3fc0b1ce9e9239aeac43dfcc6bcab32b7c58c1132e5106f887a3b",
+      "source_commit_sha256": "373939b8e3b3fc0b1ce9e9239aeac43dfcc6bcab32b7c58c1132e5106f887a3b",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/model/prompt.js",
+      "sha256": "1ef2d53ed2c08b3c491b305d0e78978db3980ab22a86f9d42e3ee802f950fa09",
+      "source_commit_sha256": "1ef2d53ed2c08b3c491b305d0e78978db3980ab22a86f9d42e3ee802f950fa09",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/model/response-parser.js",
+      "sha256": "c170cbec6fdf2f58d9f2d486a33b53449c44df268f19a4806b80604619ee7208",
+      "source_commit_sha256": "c170cbec6fdf2f58d9f2d486a33b53449c44df268f19a4806b80604619ee7208",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/validation/behavioural-guards.js",
+      "sha256": "8fd21363abbd15d8cb0c903605a3c8fbe66845303d6c5abce4bb2ce03c309564",
+      "source_commit_sha256": "8fd21363abbd15d8cb0c903605a3c8fbe66845303d6c5abce4bb2ce03c309564",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/validation/output-schema.js",
+      "sha256": "c2a8a0eb81f03dac57fb10f35ddbad6bbcd38c7386dbcbe8bf20532b7fc2ab47",
+      "source_commit_sha256": "c2a8a0eb81f03dac57fb10f35ddbad6bbcd38c7386dbcbe8bf20532b7fc2ab47",
+      "matches_source_commit": true
+    },
+    {
+      "path": "src/validation/time-validator.js",
+      "sha256": "683d7f98657aecdbd900a6318a976f3ae582671a751294fbfc632e5b7a1d39a0",
+      "source_commit_sha256": "683d7f98657aecdbd900a6318a976f3ae582671a751294fbfc632e5b7a1d39a0",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/cli/cli.test.js",
+      "sha256": "9b75ddec87080957d3601d00689fc02afa04b7969c0d0932579605416aee8297",
+      "source_commit_sha256": "9b75ddec87080957d3601d00689fc02afa04b7969c0d0932579605416aee8297",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/evaluators/aggregate.test.js",
+      "sha256": "d0bb2963d31d7fd568903e7b556de7ac4a0022f902ddb6c26aac239e84336e97",
+      "source_commit_sha256": "d0bb2963d31d7fd568903e7b556de7ac4a0022f902ddb6c26aac239e84336e97",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/evaluators/dataset.test.js",
+      "sha256": "802e8d9e01a3001a6a225e2f8c37ad7a56d3daba23e3397ebfbe91e439959dc3",
+      "source_commit_sha256": "802e8d9e01a3001a6a225e2f8c37ad7a56d3daba23e3397ebfbe91e439959dc3",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/evaluators/invariant-validator.test.js",
+      "sha256": "bcc9125baee95a9cd63399a9794d48584d6f9d61ba3481745cd6222fc602f855",
+      "source_commit_sha256": "bcc9125baee95a9cd63399a9794d48584d6f9d61ba3481745cd6222fc602f855",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/evaluators/schema-validator.test.js",
+      "sha256": "15e135eb6c4a6b4ec8f70cd3d25d3f11f652616455742681ead92a6b52a90b62",
+      "source_commit_sha256": "15e135eb6c4a6b4ec8f70cd3d25d3f11f652616455742681ead92a6b52a90b62",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/evaluators/semantic-evaluator.test.js",
+      "sha256": "3a07129fdb749f22b4cc597e18352667962a5b8694d8845df495ed64a910d51e",
+      "source_commit_sha256": "3a07129fdb749f22b4cc597e18352667962a5b8694d8845df495ed64a910d51e",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/integration/application.test.js",
+      "sha256": "f0bd7b8d02ca6defa2876a9090f25562d50bef2f6a32d814e743f08444d10cd1",
+      "source_commit_sha256": "f0bd7b8d02ca6defa2876a9090f25562d50bef2f6a32d814e743f08444d10cd1",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/model/ollama-client.test.js",
+      "sha256": "4d095221e103b066b751a6a29436c6169e9b66aab40fc4e6200068b64a0f17db",
+      "source_commit_sha256": "4d095221e103b066b751a6a29436c6169e9b66aab40fc4e6200068b64a0f17db",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/model/output-contract.test.js",
+      "sha256": "e72557d5209da3b68975a62ca063cd50abd9be362173222211310b505a6bb7b8",
+      "source_commit_sha256": "e72557d5209da3b68975a62ca063cd50abd9be362173222211310b505a6bb7b8",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/model/prompt.test.js",
+      "sha256": "fc753fb190269e674f189193bde40613a19a9e95b5d0487307db5331b8d2e384",
+      "source_commit_sha256": "fc753fb190269e674f189193bde40613a19a9e95b5d0487307db5331b8d2e384",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/model/response-parser.test.js",
+      "sha256": "87ef3c239d765e524c36168ce354f7f5902550f47a143088898c9159551047c0",
+      "source_commit_sha256": "87ef3c239d765e524c36168ce354f7f5902550f47a143088898c9159551047c0",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/setup/runtime.test.js",
+      "sha256": "9ad3a9771117944c2f2a90f2e512c047ca29124bcdd4cc49720067f54e7cab17",
+      "source_commit_sha256": "9ad3a9771117944c2f2a90f2e512c047ca29124bcdd4cc49720067f54e7cab17",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/validation/behavioural-guards.test.js",
+      "sha256": "05380d57422b7c46c5005fd1f85a0789f562c6f8c785ea36c55b07c1faeb3233",
+      "source_commit_sha256": "05380d57422b7c46c5005fd1f85a0789f562c6f8c785ea36c55b07c1faeb3233",
+      "matches_source_commit": true
+    },
+    {
+      "path": "tests/validation/output-schema.test.js",
+      "sha256": "1d2194ca2300bbc520e4170e44f39ce8e85b9c5c896a783468395942c30c3d76",
+      "source_commit_sha256": "1d2194ca2300bbc520e4170e44f39ce8e85b9c5c896a783468395942c30c3d76",
+      "matches_source_commit": true
+    }
+  ]
+}

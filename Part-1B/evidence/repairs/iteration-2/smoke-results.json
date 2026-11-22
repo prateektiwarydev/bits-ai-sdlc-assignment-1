@@ -1,0 +1,53 @@
+{
+  "label": "iteration-2 targeted real-model smoke tests",
+  "model": "qwen2.5:3b",
+  "ollama_base_url": "http://127.0.0.1:11434",
+  "timezone": "Asia/Kolkata",
+  "benchmark_cases_used": false,
+  "frozen_evaluation_executed": false,
+  "results": [
+    {
+      "id": "ITER2-SMOKE-SNOOZE-45",
+      "text": "Snooze reminder ID device-setup-27 for 45 minutes",
+      "referenceTimestamp": "2030-04-10T09:00:00+05:30",
+      "startedAt": "2026-11-22T18:53:14.068Z",
+      "completedAt": "2026-11-22T18:53:16.129Z",
+      "status": "model_response",
+      "rawResponse": "{\n  \"schema_version\": \"1.0\",\n  \"intent\": \"snooze\",\n  \"task\": null,\n  \"target_reminder\": {\"id\": \"device-setup-27\"},\n  \"scheduled_datetime\": null,\n  \"snooze_duration\": {\"value\": 45, \"unit\": \"minutes\"},\n  \"clarification_question\": null,\n  \"error_reason\": null\n}",
+      "output": {
+        "schema_version": "1.0",
+        "intent": "snooze",
+        "task": null,
+        "target_reminder": {
+          "id": "device-setup-27"
+        },
+        "scheduled_datetime": null,
+        "snooze_duration": {
+          "value": 45,
+          "unit": "minutes"
+        },
+        "clarification_question": null,
+        "error_reason": null
+      }
+    },
+    {
+      "id": "ITER2-SMOKE-MISSING-TIME",
+      "text": "Create a reminder for checking the printer",
+      "referenceTimestamp": "2030-04-10T09:00:00+05:30",
+      "startedAt": "2026-11-22T18:53:16.129Z",
+      "completedAt": "2026-11-22T18:53:17.298Z",
+      "status": "model_response",
+      "rawResponse": "{\"schema_version\":\"1.0\",\"intent\":\"create\",\"task\":\"Prepare the invoice\",\"target_reminder\":null,\"scheduled_datetime\":null,\"snooze_duration\":null,\"clarification_question\":null,\"error_reason\":null}",
+      "output": {
+        "schema_version": "1.0",
+        "intent": "clarification",
+        "task": null,
+        "target_reminder": null,
+        "scheduled_datetime": null,
+        "snooze_duration": null,
+        "clarification_question": "What date and time should this reminder use?",
+        "error_reason": null
+      }
+    }
+  ]
+}

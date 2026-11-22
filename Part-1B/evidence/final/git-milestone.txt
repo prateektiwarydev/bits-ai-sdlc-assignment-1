@@ -1,0 +1,8 @@
+Final source and evaluation milestone
+
+Source milestone: ed501cf
+Full source commit: ed501cfc86953dcc86ee7e0075e87fd97749c414
+Evaluation milestone: 0f38abe
+Full evaluation commit: 0f38abee00cb0ce5d756d304d8fdbb812216d034
+Snapshot: evidence/final/source-snapshot
+Evaluation source: evidence/repairs/iteration-3/re-evaluation

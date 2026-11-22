@@ -1,0 +1,21 @@
+{
+  "id": "C02",
+  "input": "In 90 minutes, remind me to join the standup.",
+  "reference_timestamp": "2026-11-22T09:00:00+05:30",
+  "timezone": "Asia/Kolkata",
+  "original_ollama_response": "{\"schema_version\":\"1.0\",\"intent\":\"create\",\"task\":null,\"target_reminder\":null,\"scheduled_datetime\":\"2026-11-22T20:00:00+05:30\",\"snooze_duration\":null,\"clarification_question\":null,\"error_reason\":null}",
+  "raw_response_recorded": true,
+  "original_parsed_output": {
+    "schema_version": "1.0",
+    "intent": "create",
+    "task": null,
+    "target_reminder": null,
+    "scheduled_datetime": "2026-11-22T20:00:00+05:30",
+    "snooze_duration": null,
+    "clarification_question": null,
+    "error_reason": null
+  },
+  "original_parse_status": "parsed_object",
+  "status": "model_response",
+  "captured_at": "2026-11-22T19:17:54.333Z"
+}

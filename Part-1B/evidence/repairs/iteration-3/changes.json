@@ -1,0 +1,19 @@
+{
+  "iteration": 3,
+  "changed_files": [
+    "src/model/prompt.js",
+    "src/validation/behavioural-guards.js",
+    "tests/model/prompt.test.js",
+    "tests/validation/behavioural-guards.test.js"
+  ],
+  "source_change_summary": "Derived local relative-time context, strengthened task and reminder-target extraction, converted natural snooze durations, and normalized incomplete or ambiguous fields safely.",
+  "unit_test_command": "npm test",
+  "unit_test_total": 41,
+  "unit_test_passed": 41,
+  "unit_test_failed": 0,
+  "frozen_evaluation_executed": false,
+  "benchmark_dataset_modified": false,
+  "independent_evaluator_modified": false,
+  "scoring_modified": false,
+  "threshold_modified": false
+}

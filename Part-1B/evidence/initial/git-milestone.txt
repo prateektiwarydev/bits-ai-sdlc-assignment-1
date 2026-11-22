@@ -1,0 +1,11 @@
+Initial-generation Git milestone
+
+Branch: 001-ai-reminder-agent
+Commit: be0e2f6c452ce8a377dbb3c0d125fc4e78c84942
+Short commit: be0e2f6
+Commit subject: feat: implement initial Part-1B reminder agent
+Milestone: First complete T001-T058 implementation source, before T063 genuine evaluation or any evaluation-driven repair.
+Snapshot: evidence/initial/source-snapshot
+Verification: evidence/initial/verification.json
+
+No evaluation-driven repair commit is recorded at this milestone.

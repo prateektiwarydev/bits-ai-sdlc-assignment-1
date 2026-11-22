@@ -1,0 +1,10 @@
+{
+  "id": "R02",
+  "input": "Move reminder ID rmt-42 to tomorrow at 8 AM.",
+  "reference_timestamp": "2026-11-22T09:00:00+05:30",
+  "timezone": "Asia/Kolkata",
+  "raw_model_response": "{\n  \"action\": \"RESCHEDULE\",\n  \"reminder_id\": \"rmt-42\",\n  \"scheduled_datetime\": \"2026-11-23T08:00:00+05:30\",\n  \"snooze_duration\": null\n}",
+  "raw_response_recorded": true,
+  "status": "model_response",
+  "captured_at": "2026-11-22T16:31:23.874Z"
+}
