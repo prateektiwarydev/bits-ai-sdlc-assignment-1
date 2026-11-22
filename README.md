@@ -1,4 +1,4 @@
-# BITS Pilani AI-Augmented SDLC Assignment 1
+# BITS Pilani AI-Augmented SDLC Assignment 1 (Student ID - 2026ns93061)
 
 This repository contains the two-part implementation for the BITS Pilani
 AI-Augmented Software Development Life Cycle assignment. Each part was
