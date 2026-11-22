@@ -1,0 +1,10 @@
+{
+  "id": "R01",
+  "input": "Reschedule 'Call Priya' to 24 November 2026 at 7 PM.",
+  "reference_timestamp": "2026-11-22T09:00:00+05:30",
+  "timezone": "Asia/Kolkata",
+  "original_ollama_response": "{\n  \"schema_version\": \"1.0\",\n  \"intent\": \"reschedule\",\n  \"task\": null,\n  \"target_reminder\": {\"title\": \"Call Priya\"},\n  \"scheduled_datetime\": \"2026-11-24T19:00:00+05:30\",\n  \"snooze_duration\": null,\n  \"clarification_question\": null,\n  \"error_reason\": null\n}",
+  "raw_response_recorded": true,
+  "status": "model_response",
+  "captured_at": "2026-11-22T18:57:39.797Z"
+}
