@@ -1,0 +1,39 @@
+{
+  "freeze_status": "frozen",
+  "freeze_date": "2026-11-22",
+  "dataset": {
+    "id": "natural-language-reminder-agent-v1",
+    "version": "1.0",
+    "path": "evals/dataset.json",
+    "case_count": 18,
+    "sha256": "0db5b8e3258a1747b9483fc8a30303a59cfb2def3dac2b40c0e33cc7f949b62a"
+  },
+  "benchmark_dataset_hash_unchanged": true,
+  "benchmark_dataset_original_sha256": "0db5b8e3258a1747b9483fc8a30303a59cfb2def3dac2b40c0e33cc7f949b62a",
+  "benchmark_dataset_corrected_sha256": "0db5b8e3258a1747b9483fc8a30303a59cfb2def3dac2b40c0e33cc7f949b62a",
+  "scoring_policy": {
+    "attempted_cases": 18,
+    "minimum_semantic_successes": 15,
+    "semantic_threshold": 0.8,
+    "structural_pass_rate": 1,
+    "safety_violations": 0,
+    "service_errors": 0,
+    "skipped_cases": 0,
+    "missing_evidence": "fail"
+  },
+  "file_hashes": {
+    "evals/schema-validator.js": "5c1309a5357884b8604f9a68704ac1f98e4929c1404f5871f8b55de63f4b83a6",
+    "evals/invariant-validator.js": "dc92994107bd4782f0cc451763e32773afb58627682dcf9ac89a0d5d154a077b",
+    "evals/semantic-evaluator.js": "22d222e8bf2348c7ec539fae5b75605e7c185a66b07b11dd7b98bec6ae82b2de",
+    "evals/aggregate.js": "ff1dfd6e2fd71ba8b2ab4af5a14cadd2a3853f7a92e95f7a5b9f05b5dad19f73",
+    "evals/run-evaluation.js": "17e25e0a364adf583c89d4bed39e8a31608bd693b5fb3d54c44608f02c5cd397",
+    "specs/001-ai-reminder-agent/contracts/output-schema.json": "9960d2cfef7b4b69698916d49675d6442d47632fa0f29ba85c0598a2e3ceb69d",
+    "package.json": "41150c5069a4ea99c60f64a3f92e0886b8d14ac9584c1ea8247210f4db5d0fe9",
+    "package-lock.json": "e82582da5d8a1519363d24f2fa57be1848ea52a9e45288641f47d362517a272c"
+  },
+  "review": {
+    "independent_review_required_before_benchmark": true,
+    "application_validators_imported_by_harness": false,
+    "genuine_evaluation_executed": false
+  }
+}

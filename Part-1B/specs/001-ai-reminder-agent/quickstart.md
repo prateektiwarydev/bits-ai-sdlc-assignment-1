@@ -54,3 +54,12 @@ The run:
 
 A run that omits a case, encounters a model/service error, has a structural failure, or detects a
 safety violation fails overall. Thresholds and dataset expectations are frozen after review.
+
+## Ollama Smoke Check Before Genuine Evaluation
+
+Use the smoke check only to confirm local connectivity. It is not a genuine 18-case evaluation and
+must not be recorded as benchmark evidence:
+
+```bash
+curl http://127.0.0.1:11434/api/tags
+```
