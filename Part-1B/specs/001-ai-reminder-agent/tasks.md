@@ -140,12 +140,12 @@ local model, repair from evidence, and produce final submission evidence.
 
 **Purpose**: Run all 18 frozen cases against the actual local Ollama model with real evidence.
 
-- [ ] T063 Run the complete genuine evaluation through `evals/run-evaluation.js`; completion: exactly 18 cases invoke Ollama, no case is fabricated/skipped, and actual raw outputs are written to `evidence/initial/run/`.
-- [ ] T064 Preserve raw initial inputs and model responses in `evidence/initial/run/raw/`; completion: C01-C04, R01-R04, S01-S04, X01-X03, A01-A03 each have raw input/reference and actual Ollama response metadata.
-- [ ] T065 Preserve per-case structural, invariant, and semantic results in `evidence/initial/run/per-case.jsonl`; completion: each case includes schema outcome, INV-001...INV-010 applicable outcomes, rubric result, requirement/invariant trace, status, and no manual success fields.
-- [ ] T066 Preserve model configuration and errors in `evidence/initial/run/model-config.json` and `evidence/initial/run/service-errors.json`; completion: model, Ollama version/configuration, endpoint, timeout, HTTP/model errors, and timestamps are actual and reproducible.
-- [ ] T067 Preserve aggregate PASS/FAIL evidence in `evidence/initial/run/eval-results.json`; completion: denominator 18, semantic success count/rate, structural pass rate, safety failures, service errors, skipped count, evidence completeness, and overall result are recorded.
-- [ ] T068 Review and report genuine initial failures in `evidence/initial/run/failure-feedback.md`; completion: feedback names actual failed cases and evidence; no hardcase removal or threshold change is proposed.
+- [X] T063 Run the complete genuine evaluation through `evals/run-evaluation.js`; completion: exactly 18 cases invoked Ollama, no case was fabricated or skipped, and actual raw outputs were written to `evidence/initial/run/`.
+- [X] T064 Preserve raw initial inputs and model responses in `evidence/initial/run/raw/`; completion: C01-C04, R01-R04, S01-S04, X01-X03, A01-A03 each have raw input/reference and actual Ollama response metadata.
+- [X] T065 Preserve per-case structural, invariant, and semantic results in `evidence/initial/run/per-case.jsonl`; completion: each case includes schema outcome, applicable invariant outcomes, rubric result, requirement/invariant trace, status, and no manual success fields.
+- [X] T066 Preserve model configuration and errors in `evidence/initial/run/model-config.json` and `evidence/initial/run/service-errors.json`; completion: model, Ollama version/configuration, endpoint, timeout, execution timestamps, and actual service-error count are recorded.
+- [X] T067 Preserve aggregate PASS/FAIL evidence in `evidence/initial/run/eval-results.json`; completion: denominator 18, semantic success count/rate, structural pass rate, safety failures, service errors, skipped count, evidence completeness, and FAIL result are recorded.
+- [X] T068 Review and report genuine initial failures in `evidence/initial/run/failure-feedback.md`; completion: the report names all actual failing case IDs and structural/semantic reasons without changing hard cases or thresholds.
 
 **Checkpoint**: A complete genuine initial run is preserved before any application repair.
 
