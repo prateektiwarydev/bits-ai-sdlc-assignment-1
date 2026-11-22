@@ -44,6 +44,9 @@ test('prompt separates system rules from untrusted request context', () => {
   assert.match(system, /never substitute 30 minutes/i);
   assert.match(system, /if no date or time is supplied/i);
   assert.match(system, /examples below are structural patterns only/i);
+  assert.match(system, /human-readable.*title/i);
+  assert.match(system, /pronouns such as/i);
+  assert.match(system, /half an hour = 30 minutes/i);
   assert.match(prompt, /UNTRUSTED USER REQUEST/);
   assert.match(prompt, /2030-04-10T09:00:00\+05:30/);
   assert.match(prompt, /Asia\/Kolkata/);

@@ -1,0 +1,72 @@
+{
+  "label": "iteration-3 final non-benchmark real-model smoke tests",
+  "model": "qwen2.5:3b",
+  "ollama_base_url": "http://127.0.0.1:11434",
+  "timezone": "Asia/Kolkata",
+  "benchmark_cases_used": false,
+  "frozen_evaluation_executed": false,
+  "results": [
+    {
+      "id": "ITER3-CREATE-TOMORROW-FINAL",
+      "text": "Remind me to back up the project tomorrow at 7 PM",
+      "referenceTimestamp": "2030-04-10T09:00:00+05:30",
+      "startedAt": "2026-11-22T19:08:46.964Z",
+      "completedAt": "2026-11-22T19:08:48.802Z",
+      "status": "model_response",
+      "rawResponse": "{\"schema_version\":\"1.0\",\"intent\":\"create\",\"task\":\"null\",\"target_reminder\":{\"title\":\"Back up the project\"},\"scheduled_datetime\":\"2030-04-11T19:00:00+05:30\",\"snooze_duration\":null,\"clarification_question\":null,\"error_reason\":null}",
+      "output": {
+        "schema_version": "1.0",
+        "intent": "create",
+        "task": "back up the project",
+        "target_reminder": null,
+        "scheduled_datetime": "2030-04-11T19:00:00+05:30",
+        "snooze_duration": null,
+        "clarification_question": null,
+        "error_reason": null
+      }
+    },
+    {
+      "id": "ITER3-SNOOZE-ID-FINAL",
+      "text": "Snooze reminder ID rmt-900 for 45 minutes",
+      "referenceTimestamp": "2030-04-10T09:00:00+05:30",
+      "startedAt": "2026-11-22T19:08:48.802Z",
+      "completedAt": "2026-11-22T19:08:51.044Z",
+      "status": "model_response",
+      "rawResponse": "{\n  \"schema_version\": \"1.0\",\n  \"intent\": \"snooze\",\n  \"task\": null,\n  \"target_reminder\": {\n    \"id\": \"rmt-900\"\n  },\n  \"scheduled_datetime\": null,\n  \"snooze_duration\": {\n    \"value\": 15,\n    \"unit\": \"minutes\"\n  },\n  \"clarification_question\": null,\n  \"error_reason\": null\n}",
+      "output": {
+        "schema_version": "1.0",
+        "intent": "snooze",
+        "task": null,
+        "target_reminder": {
+          "id": "rmt-900"
+        },
+        "scheduled_datetime": null,
+        "snooze_duration": {
+          "value": 45,
+          "unit": "minutes"
+        },
+        "clarification_question": null,
+        "error_reason": null
+      }
+    },
+    {
+      "id": "ITER3-ZERO-FINAL",
+      "text": "Snooze 'Invoice reminder' for 0 minutes",
+      "referenceTimestamp": "2030-04-10T09:00:00+05:30",
+      "startedAt": "2026-11-22T19:08:51.044Z",
+      "completedAt": "2026-11-22T19:08:52.488Z",
+      "status": "model_response",
+      "rawResponse": "{\"schema_version\":\"1.0\",\"intent\":\"clarification\",\"task\":null,\"target_reminder\":null,\"scheduled_datetime\":null,\"snooze_duration\":null,\"clarification_question\":\"How many minutes should the 'Invoice reminder' be snoozed?\",\"error_reason\":null}",
+      "output": {
+        "schema_version": "1.0",
+        "intent": "clarification",
+        "task": null,
+        "target_reminder": null,
+        "scheduled_datetime": null,
+        "snooze_duration": null,
+        "clarification_question": "How many minutes should the 'Invoice reminder' be snoozed?",
+        "error_reason": null
+      }
+    }
+  ]
+}

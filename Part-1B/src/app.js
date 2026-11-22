@@ -5,7 +5,11 @@ const { buildSystemPrompt, buildPrompt } = require('./model/prompt');
 const { parseResponse } = require('./model/response-parser');
 const { validateOutput } = require('./validation/output-schema');
 const { validateTime } = require('./validation/time-validator');
-const { validateGuardrails, normalizeIncompleteAction } = require('./validation/behavioural-guards');
+const {
+  validateGuardrails,
+  normalizeIncompleteAction,
+  deriveRelativeScheduledDatetime
+} = require('./validation/behavioural-guards');
 const { InvocationError, MalformedModelOutputError, ServiceError } = require('./errors');
 
 async function interpret(options = {}) {
@@ -41,6 +45,12 @@ async function interpret(options = {}) {
     throw error;
   }
 
+  if ((output.intent === 'create' || output.intent === 'reschedule')) {
+    const derivedTime = deriveRelativeScheduledDatetime(text, referenceTimestamp);
+    if (derivedTime) {
+      output = { ...output, scheduled_datetime: derivedTime };
+    }
+  }
   output = normalizeIncompleteAction(output, text);
 
   const schemaResult = validateOutput(output);

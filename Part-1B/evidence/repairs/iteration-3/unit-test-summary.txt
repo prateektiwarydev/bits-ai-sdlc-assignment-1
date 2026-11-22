@@ -1,0 +1,7 @@
+Iteration 3 Unit Test Summary
+
+Command: npm test
+Tests: 41
+Passed: 41
+Failed: 0
+Skipped: 0
