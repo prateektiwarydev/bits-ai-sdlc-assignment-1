@@ -158,8 +158,8 @@ local model, repair from evidence, and produce final submission evidence.
 - [X] T071 Supply actionable failure evidence to Copilot and record the request in `evidence/repairs/feedback-to-copilot.md`; completion: feedback contains actual failures, evidence paths, defect hypotheses, and prohibited actions (no threshold/hardcase weakening).
 - [X] T072 Apply only justified repairs to source/configuration, preserving repair scope in `evidence/repairs/repair-summary.json`; completion: changed files, rationale, and linked failed case IDs are recorded and no benchmark expectation is changed.
 - [X] T073 Create a repaired source snapshot in `evidence/repairs/repaired-source/`; completion: complete repaired source and configuration are distinct from initial snapshot.
-- [ ] T074 Rerun all 18 cases with the same frozen dataset and acceptance rules through `evals/run-evaluation.js`; completion: re-evaluation invokes all 18 real cases and writes results to `evidence/repairs/re-evaluation/`.
-- [ ] T075 Preserve re-evaluation raw/per-case/configuration/aggregate evidence in `evidence/repairs/re-evaluation/`; completion: files cover all cases and permit independent reproduction without overwriting initial evidence.
+- [X] T074 Rerun all 18 cases with the same frozen dataset and acceptance rules through `evals/run-evaluation.js`; completion: re-evaluation invoked all 18 real cases and wrote results to `evidence/repairs/re-evaluation/`.
+- [X] T075 Preserve re-evaluation raw/per-case/configuration/aggregate evidence in `evidence/repairs/re-evaluation/`; completion: files cover all cases and permit independent reproduction without overwriting initial evidence.
 
 **Checkpoint**: Repairs are traceable to genuine failures and the original evaluation remains immutable.
 

@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-11-22T18:43:27.585Z",
+  "completed_at": "2026-11-22T18:44:07.529Z",
+  "ollama_base_url": "http://127.0.0.1:11434",
+  "api_endpoint": "http://127.0.0.1:11434/api/generate",
+  "model": "qwen2.5:3b",
+  "ollama_version": "0.40.17",
+  "timezone": "Asia/Kolkata",
+  "stream": false,
+  "format": "approved-output-schema-json",
+  "temperature": 0,
+  "timeout_ms": 120000,
+  "dataset_id": "natural-language-reminder-agent-v1",
+  "dataset_version": "1.0",
+  "dataset_case_count": 18,
+  "attempted_cases": 18,
+  "completed_cases": 18
+}

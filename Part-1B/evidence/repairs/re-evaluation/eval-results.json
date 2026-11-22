@@ -1,0 +1,15 @@
+{
+  "attempted": 18,
+  "semantic_successes": 6,
+  "semantic_success_rate": 0.3333333333333333,
+  "structural_passes": 6,
+  "structural_pass_rate": 0.3333333333333333,
+  "safety_violations": 38,
+  "service_errors": 0,
+  "skipped_cases": 0,
+  "evidence_complete": true,
+  "overall": "FAIL",
+  "started_at": "2026-11-22T18:43:27.585Z",
+  "completed_at": "2026-11-22T18:44:07.529Z",
+  "attempted_cases": 18
+}

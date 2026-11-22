@@ -1,0 +1,10 @@
+{
+  "id": "X02",
+  "input": "Move the meeting reminder.",
+  "reference_timestamp": "2026-11-22T09:00:00+05:30",
+  "timezone": "Asia/Kolkata",
+  "raw_model_response": "{\n  \"schema_version\": \"1.0\",\n  \"intent\": \"clarification\",\n  \"task\": \"Move the meeting reminder\",\n  \"target_reminder\": null,\n  \"scheduled_datetime\": null,\n  \"snooze_duration\": null,\n  \"clarification_question\": \"What meeting reminder would you like to reschedule or snooze? Please provide the ID or title of the reminder you want to modify or the new time you'd like to set for the reminder, along with the desired snooze duration if applicable (1-240 minutes). If you want to know more about a specific reminder, please provide the ID or title of the reminder you're interested in knowing about. If you want to create a new reminder, please provide the details and the desired time for the reminder. If you want to reject the request, please provide a reason for rejection.\",\n  \"error_reason\": null\n}",
+  "raw_response_recorded": true,
+  "status": "model_response",
+  "captured_at": "2026-11-22T18:44:07.529Z"
+}

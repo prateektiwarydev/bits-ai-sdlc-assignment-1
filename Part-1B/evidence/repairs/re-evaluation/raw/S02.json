@@ -1,0 +1,10 @@
+{
+  "id": "S02",
+  "input": "Give rmt-77 half an hour.",
+  "reference_timestamp": "2026-11-22T09:00:00+05:30",
+  "timezone": "Asia/Kolkata",
+  "raw_model_response": "{\n  \"schema_version\": \"1.0\",\n  \"intent\": \"reschedule\",\n  \"task\": null,\n  \"target_reminder\": null,\n  \"scheduled_datetime\": \"2026-11-22T15:00:00+05:30\",\n  \"snooze_duration\": null,\n  \"clarification_question\": null,\n  \"error_reason\": null\n}",
+  "raw_response_recorded": true,
+  "status": "model_response",
+  "captured_at": "2026-11-22T18:44:07.529Z"
+}
