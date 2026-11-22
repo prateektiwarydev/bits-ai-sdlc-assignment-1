@@ -175,7 +175,7 @@ local model, repair from evidence, and produce final submission evidence.
 - [X] T081 Complete `evidence/harness-log.md` according to assignment Section 4.10; completion: document model/configuration, predefined evaluation threshold and scoring method, structural/invariant/semantic results, genuine failures, feedback supplied to Copilot, repairs, re-evaluation outcomes, and the final human decision. Verify all claims against preserved evidence and retain the student-authored review from T080.
 - [X] T082 Write reproducible local setup and execution instructions in `README.md` and `specs/001-ai-reminder-agent/quickstart.md`; completion: setup, Ollama model preparation, test command, genuine evaluation command, evidence paths, and expected gate interpretation are runnable on Node.js 22.
 - [X] T083 Add a secret-scan and repository-scope verification task for final files; completion: no API key, token, credential, machine-local absolute path, or Part-1A modification is committed.
-- [ ] T084 Inspect final Git scope and commit only final Part 1B artifacts on existing branch `001-ai-reminder-agent`; completion: commit contains constitution/spec/plan/task/implementation/evidence as appropriate, excludes secrets, and no push or branch change occurred.
+- [X] T084 Inspect final Git scope and commit only final Part 1B artifacts on existing branch `001-ai-reminder-agent`; completion: commit contains constitution/spec/plan/task/implementation/evidence as appropriate, excludes secrets, and no push or branch change occurred.
 
 **Checkpoint**: Final source and evidence are preserved, human review is separate, and submission is reproducible.
 
