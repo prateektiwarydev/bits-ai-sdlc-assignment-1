@@ -15,7 +15,8 @@ test('Ollama client sends real generate request configuration', async () => {
   const body = JSON.parse(request.options.body);
   assert.equal(body.model, 'qwen2.5:3b');
   assert.equal(body.stream, false);
-  assert.equal(body.format, 'json');
+  assert.equal(body.format.$schema, 'https://json-schema.org/draft/2020-12/schema');
+  assert.equal(body.format.additionalProperties, false);
   assert.equal(body.options.temperature, 0);
 });
 

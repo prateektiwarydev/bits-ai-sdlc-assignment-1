@@ -5,7 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "node src/cli.js",
-    "test": "node --test",
+    "test": "node --test tests/*/*.test.js",
     "eval": "node evals/run-evaluation.js"
   },
   "engines": {

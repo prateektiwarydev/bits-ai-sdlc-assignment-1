@@ -2,6 +2,7 @@
 
 const { OLLAMA_BASE_URL, MODEL, REQUEST_TIMEOUT_MS } = require('../config/runtime');
 const { ServiceError } = require('../errors');
+const outputSchema = require('../../specs/001-ai-reminder-agent/contracts/output-schema.json');
 
 async function generate(prompt, fetchImpl = globalThis.fetch) {
   const controller = new AbortController();
@@ -14,7 +15,7 @@ async function generate(prompt, fetchImpl = globalThis.fetch) {
         model: MODEL,
         prompt,
         stream: false,
-        format: 'json',
+        format: outputSchema,
         options: { temperature: 0 }
       }),
       signal: controller.signal

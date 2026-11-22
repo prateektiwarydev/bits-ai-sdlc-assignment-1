@@ -6,7 +6,7 @@ const { parseResponse } = require('./model/response-parser');
 const { validateOutput } = require('./validation/output-schema');
 const { validateTime } = require('./validation/time-validator');
 const { validateGuardrails } = require('./validation/behavioural-guards');
-const { InvocationError, MalformedModelOutputError, ServiceError, ValidationError } = require('./errors');
+const { InvocationError, MalformedModelOutputError, ServiceError } = require('./errors');
 
 async function interpret(options = {}) {
   const text = options.text;
@@ -42,15 +42,15 @@ async function interpret(options = {}) {
 
   const schemaResult = validateOutput(output);
   if (!schemaResult.pass) {
-    return { status: 'validation_error', rawResponse, output: null };
+    return { status: 'validation_error', rawResponse, output };
   }
   const timeResult = validateTime(output, referenceTimestamp, timezone);
   if (!timeResult.pass) {
-    return { status: 'validation_error', rawResponse, output: null };
+    return { status: 'validation_error', rawResponse, output };
   }
   const guardResult = validateGuardrails(output, text);
   if (!guardResult.pass) {
-    return { status: 'validation_error', rawResponse, output: null };
+    return { status: 'validation_error', rawResponse, output };
   }
 
   return { status: 'model_response', rawResponse, output };

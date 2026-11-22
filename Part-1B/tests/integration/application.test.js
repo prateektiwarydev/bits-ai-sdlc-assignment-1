@@ -96,7 +96,9 @@ test('malformed model output and invalid action outputs are not accepted', async
     })
   });
   assert.equal(invalid.status, 'validation_error');
-  assert.equal(invalid.output, null);
+  assert.equal(invalid.output.intent, 'reschedule');
+  assert.equal(invalid.output.task, 'invented');
+  assert.equal(typeof invalid.rawResponse, 'string');
 });
 
 test('Ollama service failures remain separate', async () => {
