@@ -1,0 +1,26 @@
+{
+  "id": "S01",
+  "input": "Snooze 'Team standup' for 15 minutes.",
+  "reference_timestamp": "2026-11-22T09:00:00+05:30",
+  "timezone": "Asia/Kolkata",
+  "original_ollama_response": "{\"schema_version\":\"1.0\",\"intent\":\"snooze\",\"task\":null,\"target_reminder\":{\"title\":\"Team standup\"},\"scheduled_datetime\":null,\"snooze_duration\":{\"value\":15,\"unit\":\"minutes\"},\"clarification_question\":null,\"error_reason\":null}",
+  "raw_response_recorded": true,
+  "original_parsed_output": {
+    "schema_version": "1.0",
+    "intent": "snooze",
+    "task": null,
+    "target_reminder": {
+      "title": "Team standup"
+    },
+    "scheduled_datetime": null,
+    "snooze_duration": {
+      "value": 15,
+      "unit": "minutes"
+    },
+    "clarification_question": null,
+    "error_reason": null
+  },
+  "original_parse_status": "parsed_object",
+  "status": "model_response",
+  "captured_at": "2026-11-22T19:17:54.333Z"
+}
