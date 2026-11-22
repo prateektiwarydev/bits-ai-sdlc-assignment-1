@@ -129,10 +129,10 @@ local model, repair from evidence, and produce final submission evidence.
 
 **Purpose**: Preserve the untouched initial implementation before genuine evaluation or repair.
 
-- [ ] T059 Confirm that the initial application implementation produced by T030-T058 is complete and has not undergone evaluation-driven repair; completion: implementation status records that `src/`, `evals/`, and `tests/` reflect ordinary implementation/testing only, not changes made after a genuine frozen-dataset evaluation.
-- [ ] T060 Preserve the first complete source generation in `evidence/initial/` and `evidence/initial/source-snapshot/` after T059 and before the first genuine model evaluation or any repair; completion: snapshot includes source, package metadata, frozen dataset, evaluators, tests, contracts, and run instructions with no omission.
-- [ ] T061 Verify the first snapshot matches the pre-evaluation source generation in `evidence/initial/verification.json`; completion: recorded file hashes/manifest match source exactly, snapshot timestamp predates the first genuine dataset evaluation and every evaluation correction.
-- [ ] T062 Record the corresponding Git milestone for the first complete source generation in `evidence/initial/git-milestone.txt` before the first genuine model evaluation or repair; completion: commit hash or milestone reference is recorded and evidence states no repair commit has occurred.
+- [X] T059 Confirm that the initial application implementation produced by T030-T058 is complete and has not undergone evaluation-driven repair; completion: implementation status records that `src/`, `evals/`, and `tests/` reflect ordinary implementation/testing only, not changes made after a genuine frozen-dataset evaluation.
+- [X] T060 Preserve the first complete source generation in `evidence/initial/` and `evidence/initial/source-snapshot/` after T059 and before the first genuine model evaluation or any repair; completion: snapshot includes source, package metadata, frozen dataset, evaluators, tests, contracts, and run instructions with no omission.
+- [X] T061 Verify the first snapshot matches the pre-evaluation source generation in `evidence/initial/verification.json`; completion: recorded file hashes/manifest match source exactly, snapshot timestamp predates the first genuine dataset evaluation and every evaluation correction.
+- [X] T062 Record the corresponding Git milestone for the first complete source generation in `evidence/initial/git-milestone.txt` before the first genuine model evaluation or repair; completion: commit hash or milestone reference is recorded and evidence states no repair commit has occurred.
 
 **Checkpoint**: T060-T062 prove a complete, verifiable first-generation source before any repair.
 

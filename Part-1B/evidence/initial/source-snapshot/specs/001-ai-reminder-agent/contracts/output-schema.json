@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "natural-language-reminder-agent/output/1.0",
+  "title": "Natural-Language Reminder Agent Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "intent",
+    "task",
+    "target_reminder",
+    "scheduled_datetime",
+    "snooze_duration",
+    "clarification_question",
+    "error_reason"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "intent": {
+      "enum": ["create", "reschedule", "snooze", "clarification", "rejection"]
+    },
+    "task": {
+      "type": ["string", "null"],
+      "pattern": ".*\\S.*"
+    },
+    "target_reminder": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": ["string", "null"],
+              "pattern": ".*\\S.*"
+            },
+            "title": {
+              "type": ["string", "null"],
+              "pattern": ".*\\S.*"
+            }
+          },
+          "anyOf": [
+            {
+              "required": ["id"],
+              "properties": {
+                "id": { "type": "string", "pattern": ".*\\S.*" }
+              }
+            },
+            {
+              "required": ["title"],
+              "properties": {
+                "title": { "type": "string", "pattern": ".*\\S.*" }
+              }
+            }
+          ]
+        },
+        { "type": "null" }
+      ]
+    },
+    "scheduled_datetime": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "snooze_duration": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value", "unit"],
+          "properties": {
+            "value": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 240
+            },
+            "unit": {
+              "const": "minutes"
+            }
+          }
+        },
+        { "type": "null" }
+      ]
+    },
+    "clarification_question": {
+      "type": ["string", "null"],
+      "pattern": ".*\\S.*"
+    },
+    "error_reason": {
+      "type": ["string", "null"],
+      "pattern": ".*\\S.*"
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "intent": { "const": "create" } } },
+      "then": {
+        "properties": {
+          "task": { "type": "string", "pattern": ".*\\S.*" },
+          "target_reminder": { "type": "null" },
+          "scheduled_datetime": { "type": "string", "format": "date-time" },
+          "snooze_duration": { "type": "null" },
+          "clarification_question": { "type": "null" },
+          "error_reason": { "type": "null" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "intent": { "const": "reschedule" } } },
+      "then": {
+        "properties": {
+          "task": { "type": "null" },
+          "target_reminder": { "type": "object" },
+          "scheduled_datetime": { "type": "string", "format": "date-time" },
+          "snooze_duration": { "type": "null" },
+          "clarification_question": { "type": "null" },
+          "error_reason": { "type": "null" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "intent": { "const": "snooze" } } },
+      "then": {
+        "properties": {
+          "task": { "type": "null" },
+          "target_reminder": { "type": "object" },
+          "scheduled_datetime": { "type": "null" },
+          "snooze_duration": { "type": "object" },
+          "clarification_question": { "type": "null" },
+          "error_reason": { "type": "null" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "intent": { "const": "clarification" } } },
+      "then": {
+        "properties": {
+          "task": {
+            "type": ["string", "null"],
+            "pattern": ".*\\S.*"
+          },
+          "target_reminder": {
+            "oneOf": [
+              { "type": "object" },
+              { "type": "null" }
+            ]
+          },
+          "scheduled_datetime": { "type": "null" },
+          "snooze_duration": { "type": "null" },
+          "clarification_question": {
+            "type": "string",
+            "pattern": ".*\\S.*"
+          },
+          "error_reason": { "type": "null" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "intent": { "const": "rejection" } } },
+      "then": {
+        "properties": {
+          "task": { "type": "null" },
+          "target_reminder": { "type": "null" },
+          "scheduled_datetime": { "type": "null" },
+          "snooze_duration": { "type": "null" },
+          "clarification_question": { "type": "null" },
+          "error_reason": {
+            "type": "string",
+            "pattern": ".*\\S.*"
+          }
+        }
+      }
+    }
+  ],
+  "examples": [
+    {
+      "schema_version": "1.0",
+      "intent": "create",
+      "task": "Call Priya",
+      "target_reminder": null,
+      "scheduled_datetime": "2026-11-22T18:30:00+05:30",
+      "snooze_duration": null,
+      "clarification_question": null,
+      "error_reason": null
+    },
+    {
+      "schema_version": "1.0",
+      "intent": "clarification",
+      "task": "Call Priya",
+      "target_reminder": null,
+      "scheduled_datetime": null,
+      "snooze_duration": null,
+      "clarification_question": "What time should I schedule the call?",
+      "error_reason": null
+    },
+    {
+      "schema_version": "1.0",
+      "intent": "reschedule",
+      "task": null,
+      "target_reminder": { "title": "Call Priya" },
+      "scheduled_datetime": "2026-11-23T18:30:00+05:30",
+      "snooze_duration": null,
+      "clarification_question": null,
+      "error_reason": null
+    },
+    {
+      "schema_version": "1.0",
+      "intent": "create",
+      "task": "   ",
+      "target_reminder": null,
+      "scheduled_datetime": "2026-11-22T18:30:00+05:30",
+      "snooze_duration": null,
+      "clarification_question": null,
+      "error_reason": null
+    },
+    {
+      "schema_version": "1.0",
+      "intent": "reschedule",
+      "task": "Call Priya",
+      "target_reminder": { "id": null },
+      "scheduled_datetime": "2026-11-23T18:30:00+05:30",
+      "snooze_duration": null,
+      "clarification_question": null,
+      "error_reason": null
+    },
+    {
+      "schema_version": "1.0",
+      "intent": "create",
+      "task": "Call Priya",
+      "target_reminder": null,
+      "scheduled_datetime": "2026-11-22T18:30:00+05:30",
+      "snooze_duration": { "value": 15, "unit": "minutes" },
+      "clarification_question": null,
+      "error_reason": null
+    },
+    {
+      "schema_version": "1.0",
+      "intent": "rejection",
+      "task": "Delete all reminders",
+      "target_reminder": null,
+      "scheduled_datetime": null,
+      "snooze_duration": null,
+      "clarification_question": null,
+      "error_reason": "The requested action is unsupported."
+    }
+  ]
+}
