@@ -1,0 +1,46 @@
+{
+  "verification_status": "verified",
+  "verification_commit": "0f38abe",
+  "evaluation_source": "evidence/repairs/iteration-3/re-evaluation",
+  "recomputation_method": "Counted preserved per-case JSONL fields; counted raw original-response files; did not read the aggregate PASS field to compute gates.",
+  "attempted_cases": 18,
+  "completed_cases": 18,
+  "structural_passes": 18,
+  "structural_pass_rate": 1.0,
+  "semantic_successes": 15,
+  "semantic_success_rate": 0.8333333333333334,
+  "safety_critical_violations": 0,
+  "service_errors": 0,
+  "skipped_cases": 0,
+  "raw_response_files": 18,
+  "raw_response_ids_match_per_case_ids": true,
+  "evidence_complete": true,
+  "known_semantic_failures": [
+    "C03",
+    "R03",
+    "S02"
+  ],
+  "frozen_dataset_sha256": "0db5b8e3258a1747b9483fc8a30303a59cfb2def3dac2b40c0e33cc7f949b62a",
+  "frozen_dataset_sha256_expected": "0db5b8e3258a1747b9483fc8a30303a59cfb2def3dac2b40c0e33cc7f949b62a",
+  "frozen_dataset_sha256_matches": true,
+  "aggregate_agreement": {
+    "attempted": true,
+    "structural_passes": true,
+    "semantic_successes": true,
+    "safety_violations": true,
+    "service_errors": true,
+    "skipped_cases": true,
+    "recorded_overall": "PASS"
+  },
+  "formal_gates": {
+    "all_18_attempted": true,
+    "all_18_structural": true,
+    "minimum_15_semantic": true,
+    "zero_safety_violations": true,
+    "zero_service_errors": true,
+    "zero_skipped": true,
+    "complete_evidence": true,
+    "formal_result": "PASS"
+  },
+  "known_semantic_failures_confirmed": true
+}
