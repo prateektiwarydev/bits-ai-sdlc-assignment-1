@@ -1,11 +1,11 @@
 'use strict';
 
 const { generate } = require('./model/ollama-client');
-const { buildPrompt } = require('./model/prompt');
+const { buildSystemPrompt, buildPrompt } = require('./model/prompt');
 const { parseResponse } = require('./model/response-parser');
 const { validateOutput } = require('./validation/output-schema');
 const { validateTime } = require('./validation/time-validator');
-const { validateGuardrails } = require('./validation/behavioural-guards');
+const { validateGuardrails, normalizeIncompleteAction } = require('./validation/behavioural-guards');
 const { InvocationError, MalformedModelOutputError, ServiceError } = require('./errors');
 
 async function interpret(options = {}) {
@@ -22,7 +22,8 @@ async function interpret(options = {}) {
   try {
     const ollamaResult = await (options.generate || generate)(
       buildPrompt(text, referenceTimestamp, timezone),
-      options.fetchImpl
+      options.fetchImpl,
+      buildSystemPrompt()
     );
     rawResponse = ollamaResult.response;
   } catch (error) {
@@ -39,6 +40,8 @@ async function interpret(options = {}) {
     }
     throw error;
   }
+
+  output = normalizeIncompleteAction(output, text);
 
   const schemaResult = validateOutput(output);
   if (!schemaResult.pass) {

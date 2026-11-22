@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { validateTime } = require('../../src/validation/time-validator');
-const { validateGuardrails } = require('../../src/validation/behavioural-guards');
+const { validateGuardrails, normalizeIncompleteAction } = require('../../src/validation/behavioural-guards');
 
 const reference = '2026-11-22T09:00:00+05:30';
 
@@ -41,4 +41,43 @@ test('guards reject prompt injection, unsupported actions, ambiguous targets and
     scheduled_datetime: null, snooze_duration: { value: 241, unit: 'minutes' },
     clarification_question: null, error_reason: null
   }, 'Snooze rmt-1').pass, false);
+});
+
+test('incomplete actionable intents normalize to valid clarification', () => {
+  const incompleteCreate = {
+    schema_version: '1.0',
+    intent: 'create',
+    task: 'Prepare the invoice',
+    target_reminder: null,
+    scheduled_datetime: null,
+    snooze_duration: null,
+    clarification_question: null,
+    error_reason: null
+  };
+  const createClarification = normalizeIncompleteAction(
+    incompleteCreate,
+    'Create a reminder for checking the printer'
+  );
+  assert.equal(createClarification.intent, 'clarification');
+  assert.equal(createClarification.task, null);
+  assert.equal(createClarification.scheduled_datetime, null);
+
+  const incompleteReschedule = normalizeIncompleteAction({
+    ...incompleteCreate,
+    intent: 'reschedule',
+    task: null,
+    scheduled_datetime: '2026-11-23T09:00:00+05:30'
+  }, 'Reschedule it tomorrow');
+  assert.equal(incompleteReschedule.intent, 'clarification');
+  assert.equal(incompleteReschedule.target_reminder, null);
+
+  const incompleteSnooze = normalizeIncompleteAction({
+    ...incompleteCreate,
+    intent: 'snooze',
+    task: null,
+    target_reminder: { id: 'rmt-1' },
+    snooze_duration: null
+  }, 'Snooze rmt-1');
+  assert.equal(incompleteSnooze.intent, 'clarification');
+  assert.equal(incompleteSnooze.snooze_duration, null);
 });

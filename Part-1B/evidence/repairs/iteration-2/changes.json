@@ -1,0 +1,18 @@
+{
+  "iteration": 2,
+  "changed_files": [
+    "src/model/prompt.js",
+    "src/model/ollama-client.js",
+    "src/app.js",
+    "src/validation/behavioural-guards.js",
+    "tests/model/prompt.test.js",
+    "tests/model/ollama-client.test.js",
+    "tests/validation/behavioural-guards.test.js",
+    "tests/integration/application.test.js"
+  ],
+  "technical_change": "Separate system/user prompt structure, stronger extraction rules, no-example-copy instruction, and incomplete-action clarification normalization.",
+  "frozen_evaluation_executed": false,
+  "benchmark_dataset_modified": false,
+  "independent_evaluator_modified": false,
+  "scoring_modified": false
+}

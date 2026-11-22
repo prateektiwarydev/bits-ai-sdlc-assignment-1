@@ -91,7 +91,7 @@ test('malformed model output and invalid action outputs are not accepted', async
     referenceTimestamp: reference,
     generate: response({
       schema_version: '1.0', intent: 'reschedule', task: 'invented',
-      target_reminder: null, scheduled_datetime: 'not-a-date',
+      target_reminder: { title: 'Dentist' }, scheduled_datetime: 'not-a-date',
       snooze_duration: null, clarification_question: null, error_reason: null
     })
   });
@@ -99,6 +99,23 @@ test('malformed model output and invalid action outputs are not accepted', async
   assert.equal(invalid.output.intent, 'reschedule');
   assert.equal(invalid.output.task, 'invented');
   assert.equal(typeof invalid.rawResponse, 'string');
+});
+
+test('incomplete CREATE normalizes to clarification instead of an accepted action', async () => {
+  const result = await interpret({
+    text: 'Create a reminder for checking the printer',
+    referenceTimestamp: reference,
+    generate: response({
+      schema_version: '1.0', intent: 'create',
+      task: 'Prepare the invoice', target_reminder: null,
+      scheduled_datetime: null, snooze_duration: null,
+      clarification_question: null, error_reason: null
+    })
+  });
+  assert.equal(result.status, 'model_response');
+  assert.equal(result.output.intent, 'clarification');
+  assert.equal(result.output.task, null);
+  assert.equal(result.output.scheduled_datetime, null);
 });
 
 test('Ollama service failures remain separate', async () => {

@@ -4,7 +4,7 @@ const { OLLAMA_BASE_URL, MODEL, REQUEST_TIMEOUT_MS } = require('../config/runtim
 const { ServiceError } = require('../errors');
 const outputSchema = require('../../specs/001-ai-reminder-agent/contracts/output-schema.json');
 
-async function generate(prompt, fetchImpl = globalThis.fetch) {
+async function generate(prompt, fetchImpl = globalThis.fetch, systemPrompt = '') {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   try {
@@ -14,6 +14,7 @@ async function generate(prompt, fetchImpl = globalThis.fetch) {
       body: JSON.stringify({
         model: MODEL,
         prompt,
+        ...(systemPrompt ? { system: systemPrompt } : {}),
         stream: false,
         format: outputSchema,
         options: { temperature: 0 }

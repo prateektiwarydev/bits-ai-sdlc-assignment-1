@@ -10,7 +10,7 @@ test('Ollama client sends real generate request configuration', async () => {
     request = { url, options };
     return { ok: true, json: async () => ({ response: '{}', model: 'qwen2.5:3b' }) };
   };
-  await generate('test prompt', fetchImpl);
+  await generate('test prompt', fetchImpl, 'test system prompt');
   assert.equal(request.url, 'http://127.0.0.1:11434/api/generate');
   const body = JSON.parse(request.options.body);
   assert.equal(body.model, 'qwen2.5:3b');
@@ -18,6 +18,7 @@ test('Ollama client sends real generate request configuration', async () => {
   assert.equal(body.format.$schema, 'https://json-schema.org/draft/2020-12/schema');
   assert.equal(body.format.additionalProperties, false);
   assert.equal(body.options.temperature, 0);
+  assert.equal(body.system, 'test system prompt');
 });
 
 test('Ollama HTTP and malformed responses become service errors', async () => {
