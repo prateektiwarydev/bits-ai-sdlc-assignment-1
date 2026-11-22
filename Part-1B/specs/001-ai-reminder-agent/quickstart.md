@@ -1,21 +1,42 @@
 # Quickstart
 
-## Prerequisites
+## 1. Prepare the local runtime
 
-- Node.js 22
-- Ollama 0.40.17 running locally
-- `qwen2.5:3b` installed in Ollama
-- No paid API or credentials
+Install Node.js 22 and Ollama 0.40.17. From the Part 1B project directory,
+install the locked Node.js dependencies:
 
-## Verify Ollama
+```bash
+npm ci
+```
+
+If Ollama is not already running, start it in another terminal and leave it
+running:
+
+```bash
+ollama serve
+```
+
+Skip `ollama serve` if Ollama is already running. In another terminal,
+download the configured model:
+
+```bash
+ollama pull qwen2.5:3b
+```
+
+Verify that the model is available:
 
 ```bash
 curl http://127.0.0.1:11434/api/tags
 ```
 
-The `qwen2.5:3b` model must appear in the result.
+The application connects to `http://127.0.0.1:11434/api/generate` and uses
+`qwen2.5:3b` with temperature `0`, non-streaming JSON output, and a 120-second
+request timeout. No credentials or paid API are needed.
 
-## Run the CLI
+## 2. Run one reminder request
+
+The CLI interprets a request for creating, rescheduling, or snoozing a reminder.
+It does not create or persist reminders:
 
 ```bash
 node src/cli.js \
@@ -23,43 +44,79 @@ node src/cli.js \
   --reference "2026-11-22T09:00:00+05:30"
 ```
 
-The CLI accepts an explicit reference timestamp and emits the 1.0 JSON contract. It does not create
-or persist a reminder.
+Every invocation requires `--text` and `--reference`. The reference timestamp
+must be explicit and is used with `Asia/Kolkata` for reproducible relative-time
+interpretation. An explicitly empty request can be passed as `--text ""`.
 
-An omitted `--text` option is an invocation error. To evaluate an explicitly empty reminder request,
-pass `--text ""` so the empty value is preserved as user content and sent to Ollama.
+## 3. Run tests
 
-## Run Deterministic Tests
+Use the actual test script from `package.json`:
 
 ```bash
-node --test
+npm test
 ```
 
-Unit tests may mock model responses to prove schema, invariant, and aggregate evaluator logic.
-Mocked tests do not replace the genuine Ollama evaluation.
+It runs `node --test tests/*/*.test.js`. Unit and deterministic evaluator tests
+can use controlled responses for isolation; they do not replace real Ollama
+inference.
 
-## Run the Genuine 18-Case Evaluation
+## 4. Run the genuine frozen evaluation
+
+With Ollama running and `qwen2.5:3b` installed, run:
+
+```bash
+npm run eval
+```
+
+The package script invokes `node evals/run-evaluation.js`. The runner loads
+exactly 18 cases from `evals/dataset.json`, invokes the real application and
+local model for every case, and preserves raw model responses and per-case
+results. The equivalent direct command is:
 
 ```bash
 node evals/run-evaluation.js
 ```
 
-The run:
+Do not treat a rerun as a replay: it makes fresh real-model calls and may
+produce different outputs and evaluation results. The command itself prints
+the aggregate and does not write preserved evidence. Separate evidence-capture
+scripts write to fixed historical directories, so do not run them against an
+existing evidence path unless you intentionally create and verify a new run.
 
-1. Loads exactly 18 fixed cases from `evals/dataset.json`.
-2. Calls the real application and Ollama for every case.
-3. Preserves raw model responses and per-case evidence.
-4. Runs independent schema, invariant, and semantic evaluation modules.
-5. Writes a machine-readable summary and overall PASS/FAIL decision.
+## 5. Evaluation gates and PASS criteria
 
-A run that omits a case, encounters a model/service error, has a structural failure, or detects a
-safety violation fails overall. Thresholds and dataset expectations are frozen after review.
+The three evaluation layers remain independent:
 
-## Ollama Smoke Check Before Genuine Evaluation
+- **Structural gate:** every output passes the approved JSON Schema, including
+  exact fields, types, supported intents, and conditional fields.
+- **Invariant gate:** the frozen validator reports no safety-critical
+  violations for the run, including detected fabricated mandatory information,
+  invalid actions, unsafe prompt-instruction handling, invalid future
+  timestamps, invalid snooze values, or arbitrary targets. A zero count is not
+  proof that fabrication is impossible: the remaining C03 semantic failure
+  demonstrates a validation limitation.
+- **Semantic gate:** each case satisfies its expected intent, extracted meaning,
+  and case-specific clarification rubric.
 
-Use the smoke check only to confirm local connectivity. It is not a genuine 18-case evaluation and
-must not be recorded as benchmark evidence:
+Formal PASS requires all of the following:
 
-```bash
-curl http://127.0.0.1:11434/api/tags
-```
+- 18/18 cases attempted and completed.
+- 18/18 structural passes.
+- At least 15/18 semantic successes.
+- Zero safety-critical invariant violations.
+- Zero service errors.
+- Zero skipped cases.
+- Complete raw-response and per-case evidence.
+
+## 6. Evidence locations and recorded result
+
+- Initial source and evaluation evidence: `evidence/initial/`
+- Repair diagnosis, source snapshots, and re-evaluations:
+  `evidence/repairs/`
+- Final machine-readable aggregate: `evidence/eval-results.json`
+- Final source snapshot and independent verification: `evidence/final/`
+
+The preserved final evaluation is **PASS** with 18/18 structural passes and
+15/18 semantic successes (83.33%). The three known semantic failures are
+**C03**, **R03**, and **S02**. They remain documented limitations; none is
+counted as a semantic success.
